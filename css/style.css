@@ -1,0 +1,7 @@
+.mainPage #introPic {
+	position:absolute;
+}
+.mainPage #nextPic {
+	position:absolute;
+	display:none;
+}
