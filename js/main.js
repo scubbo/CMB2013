@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var pageWidth = $(window).width();
 	var pageHeight = $(window).height();
-	var picWidth = Math.min(pageWidth*0.8, pageHeight*0.8);	
+	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
 	var indent = (pageWidth - picWidth) / 2.0;
 	$('#introPic, #nextPic').css('width', picWidth).css('height', picWidth).css('left', indent);
 	console.log('update');
