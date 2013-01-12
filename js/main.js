@@ -10,9 +10,16 @@ $(document).ready(function() {
 		$('body').animate({backgroundColor: '#000000'}, 100);
 		$('#nextPic').fadeIn(100, function() {
 			$('#introPic').hide();
+			makeFragments();
 			$('#nextPic').click(function() {
 				console.log('boom!');
 			});
 		});
 	});
 });
+
+function makeFragments(number) {
+	for (i=0;i<number;i++) {
+		$('body').append('<img src="img/fragments/' + number.toString() + '.png" class="fragment" id="fragment' + number.toString() + '" />');
+	}
+}
