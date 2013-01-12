@@ -7,7 +7,8 @@ $(document).ready(function() {
 	console.log('update');
 	$('#introPic').click(function() {
 		console.log('fading in');
-		$('#nextPic').fadeIn(2000, function() {
+		$('body').animate({backgroundColor: '#000000'}, 100);
+		$('#nextPic').fadeIn(100, function() {
 			$('#introPic').hide();
 			$('#nextPic').click(function() {
 				console.log('boom!');
