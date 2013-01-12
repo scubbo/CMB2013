@@ -10,7 +10,7 @@ $(document).ready(function() {
 		$('body').animate({backgroundColor: '#000000'}, 100);
 		$('#nextPic').fadeIn(100, function() {
 			$('#introPic').hide();
-			makeFragments();
+			makeFragments(22);
 			$('#nextPic').click(function() {
 				console.log('boom!');
 			});
@@ -19,7 +19,10 @@ $(document).ready(function() {
 });
 
 function makeFragments(number) {
+	console.log('making fragments');
 	for (i=0;i<number;i++) {
-		$('body').append('<img src="img/fragments/' + number.toString() + '.png" class="fragment" id="fragment' + number.toString() + '" />');
+		$('body').append('<img src="img/fragments/' + (number+1).toString() + '.png" class="fragment" id="fragment' + number.toString() + '" />');
+		console.log('making ' + (number+1).toString());
 	}
+	console.log('made fragments');
 }
