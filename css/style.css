@@ -1,6 +1,4 @@
-#pageWrapper {
-	width:100%;
-	height:100%;
+body.mainPage {
 	overflow:hidden;
 }
 .mainPage #introPic {
