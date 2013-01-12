@@ -25,14 +25,20 @@ function makeFragments(number) {
 		console.log('making ' + (i+1).toString());
 	}
 	$('.fragment').each(function(index, elem) {
-		$(elem).attr('x-scatter-target', makeScatterTarget(elem));
+		$(elem).attr('data-scatter-target', makeScatterTarget(elem));
 	});
 	$('.fragment').mouseover(function() {
 		var theFragment = $(this);
 		console.log('mousedover' + theFragment);
+		scatterX = theFragment.attr('data-scatter-target').split(',')[0];
+		scatterY = theFragment.attr('data-scatter-target').split(',')[1];
+		rotateX = theFragment.attr('data-scatter-target').split(',')[2];
+		rotateY = theFragment.attr('data-scatter-target').split(',')[3];
+		rotate = theFragment.attr('data-scatter-target').split(',')[4];
+		theFragment.css({'-webkit-transform', 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
 	});
 }
 
 function makeScatterTarget(elem) {
-	return '200,100'
+	return '200,100, 50, 300, 20';
 }
