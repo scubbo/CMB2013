@@ -21,8 +21,8 @@ $(document).ready(function() {
 function makeFragments(number) {
 	console.log('making fragments');
 	for (i=0;i<number;i++) {
-		$('body').append('<img src="img/fragments/' + (number+1).toString() + '.png" class="fragment" id="fragment' + number.toString() + '" />');
-		console.log('making ' + (number+1).toString());
+		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="fragment" id="fragment' + number.toString() + '" />');
+		console.log('making ' + (i+1).toString());
 	}
 	console.log('made fragments');
 }
