@@ -25,7 +25,7 @@ function makeFragments(number) {
 		console.log('making ' + (i+1).toString());
 	}
 	$('.fragment').each(function(index, elem) {
-		$(elem).attr('x-scatter-target') = makeScatterTarget(elem);
+		$(elem).attr('x-scatter-target', makeScatterTarget(elem));
 	});
 	$('.fragment').mouseover(function() {
 		var theFragment = $(this);
