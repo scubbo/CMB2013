@@ -35,7 +35,7 @@ function makeFragments(number) {
 		rotateX = theFragment.attr('data-scatter-target').split(',')[2];
 		rotateY = theFragment.attr('data-scatter-target').split(',')[3];
 		rotate = theFragment.attr('data-scatter-target').split(',')[4];
-		theFragment.css({'-webkit-transform', 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+		theFragment.css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
 	});
 }
 
