@@ -40,5 +40,13 @@ function makeFragments(number) {
 }
 
 function makeScatterTarget(elem) {
-	return '200,100, 50, 300, 20';
+	return maybeNegative() + (300 + Math.random() * 200).toString() + ',' + maybeNegative() + (300 + Math.random() * 200).toString() + ',' + maybeNegative() + (Math.random() * 600).toString() + ',' + maybeNegative() + (Math.random() * 600).toString() + ',' + maybeNegative() + (Math.random() * 600).toString();
+}
+
+function maybeNegative() {
+	if (Math.random() > 0.5) {
+		return "-";
+	} else {
+		return "";
+	}
 }
