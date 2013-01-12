@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 function makeFragments(number) {
 	for (i=0;i<number;i++) {
-		$('#pageWrapper').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="fragment" id="fragment' + i.toString() + '" />');
+		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="fragment" id="fragment' + i.toString() + '" />');
 		console.log('making ' + (i+1).toString());
 	}
 	$('.fragment').each(function(index, elem) {
