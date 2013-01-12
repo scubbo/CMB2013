@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	makeFragments(22);
 	var pageWidth = $(window).width();
 	var pageHeight = $(window).height();
 	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
@@ -10,7 +11,7 @@ $(document).ready(function() {
 		$('body').animate({backgroundColor: '#000000'}, 100);
 		$('#nextPic').fadeIn(100, function() {
 			$('#introPic').hide();
-			makeFragments(22);
+			$('.fragment').show();
 			$('#nextPic').click(function() {
 				console.log('boom!');
 			});
@@ -19,10 +20,19 @@ $(document).ready(function() {
 });
 
 function makeFragments(number) {
-	console.log('making fragments');
 	for (i=0;i<number;i++) {
-		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="fragment" id="fragment' + number.toString() + '" />');
+		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="fragment" id="fragment' + i.toString() + '" />');
 		console.log('making ' + (i+1).toString());
 	}
-	console.log('made fragments');
+	$('.fragment').each(function(index, elem) {
+		$(elem).attr('x-scatter-target') = makeScatterTarget(elem);
+	});
+	$('.fragment').mouseover(function() {
+		var theFragment = $(this);
+		console.log('mousedover' + theFragment);
+	});
+}
+
+function makeScatterTarget(elem) {
+	return '200,100'
 }
