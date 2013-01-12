@@ -8,8 +8,8 @@
 .fragment {
 	position:absolute;
 	display:none;
-	-webkit-transition: -webkit-transform 20ms linear;
-	-moz-transition: -moz-transform 20ms linear;
-	-o-transition: -o-transform 20ms linear;
-	transition: transform 20ms linear;
+	-webkit-transition: -webkit-transform 200ms linear;
+	-moz-transition: -moz-transform 200ms linear;
+	-o-transition: -o-transform 200ms linear;
+	transition: transform 200ms linear;
 }
