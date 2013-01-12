@@ -8,10 +8,10 @@ $(document).ready(function() {
 	console.log('update');
 	$('#introPic').click(function() {
 		console.log('fading in');
-		$('body').animate({backgroundColor: '#000000'}, 100);
-		$('#nextPic').fadeIn(100, function() {
+		$('body').animate({backgroundColor: '#000000'}, 300);
+		$('#nextPic').fadeIn(300, function() {
 			$('#introPic').hide();
-			$('.fragment').show();
+			setTimeout($('.fragment').show(), 1000);
 			$('#nextPic').click(function() {
 				console.log('boom!');
 			});
@@ -27,18 +27,21 @@ function makeFragments(number) {
 	$('.fragment').each(function(index, elem) {
 		$(elem).attr('data-scatter-target', makeScatterTarget(elem));
 	});
-	$('.fragment').mouseover(function() {
-		var theFragment = $(this);
-		console.log('mousedover' + theFragment);
-		scatterX = theFragment.attr('data-scatter-target').split(',')[0];
-		scatterY = theFragment.attr('data-scatter-target').split(',')[1];
-		rotateX = theFragment.attr('data-scatter-target').split(',')[2];
-		rotateY = theFragment.attr('data-scatter-target').split(',')[3];
-		rotate = theFragment.attr('data-scatter-target').split(',')[4];
-		theFragment.css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
-		theFragment.css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
-		theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
-		theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+	$('.fragment').each(function(index, elem) {
+		var theFragment = $(elem);
+		theFragment.mouseover(function() {
+			console.log('mousedover' + theFragment);
+			scatterX = theFragment.attr('data-scatter-target').split(',')[0];
+			scatterY = theFragment.attr('data-scatter-target').split(',')[1];
+			rotateX = theFragment.attr('data-scatter-target').split(',')[2];
+			rotateY = theFragment.attr('data-scatter-target').split(',')[3];
+			rotate = theFragment.attr('data-scatter-target').split(',')[4];
+			theFragment.css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			theFragment.css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+		});
+		theFragment.css({left:fragmentPositions[index]['x'].toString() + 'px', top:fragmentPositions[index]['y'].toString() + 'px'});
 	});
 }
 
@@ -53,3 +56,28 @@ function maybeNegative() {
 		return "";
 	}
 }
+
+fragmentPositions = [
+	{x:50, y:50),
+	{x:35, y:26),
+	{x:22, y:74),
+	{x:14, y:10),
+	{x:35, y:10),
+	{x:39, y:26),
+	{x:18, y:13),
+	{x:26, y:82),
+	{x:16, y:13),
+	{x:19, y:44),
+	{x:62, y:49),
+	{x:73, y:32),
+	{x:14, y:5),
+	{x:16, y:86),
+	{x:64, y:32),
+	{x:32, y:12),
+	{x:25, y:25),
+	{x:85, y:76),
+	{x:50, y:32),
+	{x:4, y:5),
+	{x:8, y:72),
+	{x:63, y:3)
+]
