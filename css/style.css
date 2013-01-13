@@ -15,4 +15,6 @@ body.mainPage {
 	-moz-transition: -moz-transform 300ms ease-in;
 	-o-transition: -o-transform 300ms ease-in;
 	transition: transform 300ms ease-in;
+	width: 100px;
+	height:100px;
 }

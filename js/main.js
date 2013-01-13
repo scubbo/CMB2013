@@ -12,11 +12,10 @@ $(document).ready(function() {
 		$('#nextPic').fadeIn(300, function() {
 			$('#introPic').hide();
 			console.log('1');
-			setTimeout($('.fragment').show(), 1000);
-			console.log('2');
-			$('#nextPic').click(function() {
-				console.log('boom!!');
-			});
+			setTimeout(function() {
+				$('.fragment').show();
+				$('#nextPic').hide();
+			}, 1000);
 		});
 	});
 });
