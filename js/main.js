@@ -11,7 +11,9 @@ $(document).ready(function() {
 		$('body').animate({backgroundColor: '#000000'}, 300);
 		$('#nextPic').fadeIn(300, function() {
 			$('#introPic').hide();
+			console.log('1');
 			setTimeout($('.fragment').show(), 1000);
+			console.log('2');
 			$('#nextPic').click(function() {
 				console.log('boom!');
 			});
@@ -30,7 +32,6 @@ function makeFragments(number) {
 	$('.fragment').each(function(index, elem) {
 		var theFragment = $(elem);
 		theFragment.mouseover(function() {
-			console.log('mousedover' + theFragment);
 			scatterX = theFragment.attr('data-scatter-target').split(',')[0];
 			scatterY = theFragment.attr('data-scatter-target').split(',')[1];
 			rotateX = theFragment.attr('data-scatter-target').split(',')[2];
