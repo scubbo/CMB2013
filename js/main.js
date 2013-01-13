@@ -49,7 +49,7 @@ function makeFragments(number) {
 		var left = fragmentPositions[index]['x'];
 		var top = fragmentPositions[index]['y'];
 		console.log(left.toString() + ' - ' + top.toString());
-		theFragment.css({left:left.toString() + 'px', top:top.toString() + 'px'});
+		theFragment.css({left:left.toString() + '%', top:top.toString() + '%'});
 		console.log('post this');
 	});
 }
