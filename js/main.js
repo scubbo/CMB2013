@@ -43,7 +43,9 @@ function makeFragments(number) {
 			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
 			theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
 		});
+		console.log('pre this');
 		theFragment.css({left:fragmentPositions[index]['x'].toString() + 'px', top:fragmentPositions[index]['y'].toString() + 'px'});
+		console.log('post this');
 	});
 }
 
@@ -82,4 +84,4 @@ var fragmentPositions = [
 	{x:4, y:5},
 	{x:8, y:72},
 	{x:63, y:3}
-]
+];
