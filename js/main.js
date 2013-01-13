@@ -15,7 +15,7 @@ $(document).ready(function() {
 			setTimeout($('.fragment').show(), 1000);
 			console.log('2');
 			$('#nextPic').click(function() {
-				console.log('boom!');
+				console.log('boom!!');
 			});
 		});
 	});
