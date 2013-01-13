@@ -21,10 +21,8 @@ $(document).ready(function() {
 });
 
 function makeFragments(number) {
-	console.log('making fragments');
 	for (i=0;i<number;i++) {
 		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="fragment" id="fragment' + i.toString() + '" />');
-		console.log('making ' + (i+1).toString());
 	}
 	$('.fragment').each(function(index, elem) {
 		$(elem).attr('data-scatter-target', makeScatterTarget(elem));
@@ -32,7 +30,6 @@ function makeFragments(number) {
 	$('.fragment').each(function(index, elem) {
 		var theFragment = $(elem);
 		theFragment.mouseover(function() {
-			console.log('in start of mouseover');
 			scatterX = theFragment.attr('data-scatter-target').split(',')[0];
 			scatterY = theFragment.attr('data-scatter-target').split(',')[1];
 			rotateX = theFragment.attr('data-scatter-target').split(',')[2];
@@ -42,14 +39,11 @@ function makeFragments(number) {
 			theFragment.css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
 			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
 			theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
-			console.log('at end of mouseover');
+			theFragment.hide();
 		});
-		console.log('pre this');
 		var left = fragmentPositions[index]['x'];
 		var top = fragmentPositions[index]['y'];
-		console.log(left.toString() + ' - ' + top.toString());
 		theFragment.css({left:left.toString() + '%', top:top.toString() + '%'});
-		console.log('post this');
 	});
 }
 
