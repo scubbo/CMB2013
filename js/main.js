@@ -33,6 +33,7 @@ function makeFragments(number) {
 	$('.fragment').each(function(index, elem) {
 		var theFragment = $(elem);
 		theFragment.mouseover(function() {
+			console.log('in start of mouseover');
 			scatterX = theFragment.attr('data-scatter-target').split(',')[0];
 			scatterY = theFragment.attr('data-scatter-target').split(',')[1];
 			rotateX = theFragment.attr('data-scatter-target').split(',')[2];
@@ -42,6 +43,7 @@ function makeFragments(number) {
 			theFragment.css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
 			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
 			theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			console.log('at end of mouseover');
 		});
 		console.log('pre this');
 		theFragment.css({left:fragmentPositions[index]['x'].toString() + 'px', top:fragmentPositions[index]['y'].toString() + 'px'});
