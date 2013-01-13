@@ -22,6 +22,7 @@ $(document).ready(function() {
 });
 
 function makeFragments(number) {
+	console.log('making fragments');
 	for (i=0;i<number;i++) {
 		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="fragment" id="fragment' + i.toString() + '" />');
 		console.log('making ' + (i+1).toString());
@@ -58,7 +59,7 @@ function maybeNegative() {
 	}
 }
 
-fragmentPositions = [
+var fragmentPositions = [
 	{x:50, y:50},
 	{x:35, y:26},
 	{x:22, y:74},
