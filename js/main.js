@@ -48,6 +48,7 @@ function makeFragments(number) {
 		console.log('pre this');
 		var left = fragmentPositions[index]['x'];
 		var top = fragmentPositions[index]['y'];
+		console.log(left.toString() + ' - ' + top.toString());
 		theFragment.css({left:left.toString() + 'px', top:top.toString() + 'px'});
 		console.log('post this');
 	});
