@@ -46,7 +46,9 @@ function makeFragments(number) {
 			console.log('at end of mouseover');
 		});
 		console.log('pre this');
-		theFragment.css({left:fragmentPositions[index]['x'].toString() + 'px', top:fragmentPositions[index]['y'].toString() + 'px'});
+		var left = fragmentPositions[index]['x'];
+		var top = framentPositions[index]['y'];
+		theFragment.css({left:left.toString() + 'px', top:top.toString() + 'px'});
 		console.log('post this');
 	});
 }
