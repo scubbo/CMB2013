@@ -47,7 +47,7 @@ function makeFragments(number) {
 		});
 		console.log('pre this');
 		var left = fragmentPositions[index]['x'];
-		var top = framentPositions[index]['y'];
+		var top = fragmentPositions[index]['y'];
 		theFragment.css({left:left.toString() + 'px', top:top.toString() + 'px'});
 		console.log('post this');
 	});
