@@ -20,10 +20,10 @@ $(document).ready(function() {
 			$('body').animate({backgroundColor: '#000000'}, 500);
 			$('#nextPic').fadeIn(500, function() {
 				$('#introPic').hide();
-				setTimeout(function() {
+				/*setTimeout(function() {
 					$('.fragment').show();
 					$('#nextPic').hide();
-				}, 200);
+				}, 200);*/
 			});
 		});
 	});
