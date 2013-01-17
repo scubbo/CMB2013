@@ -52,8 +52,15 @@ function makeFragments(number) {
 		});
 		var left = fragmentPositions[index]['x'];
 		var top = fragmentPositions[index]['y'];
-		theFragment.css({left:left.toString() + '%', top:top.toString() + '%'});
+		var rotate = fragmentPositions[index]['rot'];
+		theFragment.css({left:left.toString() + '%', top:top.toString() + '%', -webkit-transform:'rotate(' + rotate.toString() + 'deg)', -moz-transform:'rotate(' + rotate.toString() + 'deg)', -o-transform:'rotate(' + rotate.toString() + 'deg)', transform:'rotate(' + rotate.toString() + 'deg)'});
 	});
+}
+
+function makeFragmentWrapperDiv(longSide, shortSide, angle) {
+	//generates the html for a div with long and short sides as described, rotated by `angle` degrees
+	var output = '<div class="fragmentWrapper" style="position:absolute;width:' + longSide.toString + 'px;height:' + shortSide.toString() + 'px;-webkit-transform:rotate(' + angle.toString() + 'deg);-moz-transform:rotate(' + angle.toString() + 'deg);-o-transform:rotate(' + angle.toString() + 'deg);transform:rotate(' + angle.toString() + 'deg);" />';
+	return output;
 }
 
 function makeScatterTarget(elem) {
@@ -69,26 +76,27 @@ function maybeNegative() {
 }
 
 var fragmentPositions = [
-	{x:50, y:50},
-	{x:35, y:26},
-	{x:22, y:74},
-	{x:14, y:10},
-	{x:35, y:10},
-	{x:39, y:26},
-	{x:18, y:13},
-	{x:26, y:82},
-	{x:16, y:13},
-	{x:19, y:44},
-	{x:62, y:49},
-	{x:73, y:32},
-	{x:14, y:5},
-	{x:16, y:86},
-	{x:64, y:32},
-	{x:32, y:12},
-	{x:25, y:25},
-	{x:85, y:76},
-	{x:50, y:32},
-	{x:4, y:5},
-	{x:8, y:72},
-	{x:63, y:3}
+	{x:50, y:50, rot:10},
+	{x:35, y:26, rot:30},
+	{x:22, y:74, rot:200},
+	{x:14, y:10, rot:19},
+	{x:35, y:10, rot:64},
+	{x:39, y:26, rot:72},
+	{x:18, y:13, rot:18},
+	{x:26, y:82, rot:129},
+	{x:16, y:13, rot:29},
+	{x:19, y:44, rot:20},
+	{x:62, y:49, rot:95},
+	{x:73, y:32, rot:73},
+	{x:14, y:5, rot:26},
+	{x:16, y:86, rot:19},
+	{x:64, y:32, rot:93},
+	{x:32, y:12, rot:184},
+	{x:25, y:25, rot:153},
+	{x:85, y:76, rot:104},
+	{x:50, y:32, rot:286},
+	{x:4, y:5, rot:285},
+	{x:8, y:72, rot:300},
+	{x:63, y:3, rot:19}
 ];
+

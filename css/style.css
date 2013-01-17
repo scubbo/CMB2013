@@ -1,4 +1,4 @@
-body.mainPage {
+body.mainPage, body.secondPage {
 	overflow:hidden;
 }
 .mainPage #loadingIcon {
@@ -22,4 +22,7 @@ body.mainPage {
 	transition: transform 300ms ease-in, opacity 300ms ease-in;
 	width: 100px;
 	height:100px;
+}
+.secondPage #wheelContainer {
+	position:absolute;
 }
