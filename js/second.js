@@ -4,6 +4,8 @@ $(document).ready(function() {
 
 	$('#wheelContainer').css('top', pageHeight - 400).css('left', 4);
 	$('.wheelLink').each(function(index, elem) {
-		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-150px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-150px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-150px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-150px)'});
+		var theWidth = $(elem).width();
+		console.log(theWidth);
+		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-150px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-150px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-150px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-150px)', 'left':(200-(theWidth/2.0)).toString() + 'px'});
 	});
 });
