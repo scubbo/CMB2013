@@ -9,7 +9,7 @@ $(document).ready(function() {
 	$('#introPic').load(function() {
 		imagesLoaded += 1;
 		console.log('intro pic loaded, imagesLoaded is ' + imagesLoaded.toString());
-		#('#introPic').show();
+		$('#introPic').show();
 	});
 	$('#nextPic').load(function() {
 		imagesLoaded += 1;
