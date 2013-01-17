@@ -1,8 +1,12 @@
 body.mainPage {
 	overflow:hidden;
 }
+.mainPage #loadingIcon {
+	position:absolute;
+}
 .mainPage #introPic {
 	position:absolute;
+	display:none;
 }
 .mainPage #nextPic {
 	position:absolute;
