@@ -25,4 +25,11 @@ body.mainPage, body.secondPage {
 }
 .secondPage #wheelContainer {
 	position:absolute;
+	height:400px;
+	width:400px;
+}
+.secondPage .wheelLink {
+	position:absolute;
+	top:176px;
+	left:200px;
 }
