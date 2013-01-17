@@ -5,7 +5,17 @@ $(document).ready(function() {
 	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
 	var indent = (pageWidth - picWidth) / 2.0;
 	$('#introPic, #nextPic').css('width', picWidth).css('height', picWidth).css('left', indent);
-	console.log('update');
+	var imagesLoaded = 0;
+	$('#introPic').load(function() {
+		imagesLoaded += 1;
+		console.log('intro pic loaded, imagesLoaded is ' + imagesLoaded.toString());
+		#('#introPic').show();
+	});
+	$('#nextPic').load(function() {
+		imagesLoaded += 1;
+		console.log('next pic loaded, imagesLoaded is ' + imagesLoaded.toString());
+	});
+
 	$('#introPic').click(function() {
 		$('body').animate({backgroundColor: '#000000'}, 300);
 		$('#nextPic').fadeIn(300, function() {
