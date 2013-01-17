@@ -3,6 +3,7 @@ body.mainPage {
 }
 .mainPage #loadingIcon {
 	position:absolute;
+	margin:auto;
 }
 .mainPage #introPic {
 	position:absolute;
