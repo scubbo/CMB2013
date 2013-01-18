@@ -59,7 +59,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			rotateTo(targetObject, targetAngle);
 		} else {
 			//Move to the left
-			var turnsLeft = theWheelObject.totalObjects - moveToIndex;
+			var turnsLeft = theWheelObject.currentWheelPosition > moveToIndex ? theWheelObject.currentWheelPosition - moveToIndex : theWheelObject.currentWheelPosition + theWheelObject.totalObjects - moveToIndex;
 			console.log('case 2');
 			console.log(turnsLeft);
 			console.log(turnsLeft * 360);
