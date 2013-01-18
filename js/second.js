@@ -26,9 +26,9 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	console.log('target Object is ');
 	console.log(this.targetObject);
 	console.log('and its children are');
-	console.log(this.targetObject.children());
+	console.log($(this.targetObject).children());
 
-	this.targetObject.children('div.indexWheelLink').click(function() {
+	$(this.targetObject).children('div.indexWheelLink').click(function() {
 		console.log($(this));
 		var moveToIndex = $(this).attr('data-wheel-position');
 		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
