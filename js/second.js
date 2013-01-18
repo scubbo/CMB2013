@@ -58,7 +58,12 @@ function rotate(targetObject, deg, right) {
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
 	for (var i = 0;i<transforms.length;i++) {
 		var theTransform = transforms[i];
-		$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2'));
+		var currentCSS = $(targetObject).css(theTransform);
+		if (currentCSS == 'none') {
+			$(targetObject).css(theTransform, 'rotate(' + targetAngle.toString() + 'deg)');
+		} else {
+			$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2'));
+		}
 	}
 }
 
