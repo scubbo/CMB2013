@@ -84,7 +84,11 @@ function rotate(targetObject, deg, right) {
 	console.log(currentAngle);
 	console.log('deg is ');
 	console.log(deg);
+	console.log('right is ');
+	console.log(right);
 	targetAngle = right ? currentAngle - deg : currentAngle + deg;
+	console.log('targetAngle is ');
+	console.log(targetAngle);
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
 	for (var i = 0;i<transforms.length;i++) {
 		var theTransform = transforms[i];
