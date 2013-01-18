@@ -37,6 +37,11 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			turnsRight = moveToIndex - theWheelObject.currentWheelPosition;
 		} else {
 			console.log('case a2');
+			console.log(theWheelObject.totalObjects);
+			console.log(theWheelObject.currentWheelPosition);
+			console.log(moveToIndex);
+			console.log(theWheelObject.totalObjects - theWheelObject.currentWheelPosition);
+			console.log(theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex);
 			turnsRight = theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
 		}
 		//var turnsRight = moveToIndex > theWheelObject.currentWheelPosition ? moveToIndex - theWheelObject.currentWheelPosition : theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
