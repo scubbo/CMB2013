@@ -15,6 +15,7 @@ $(document).ready(function() {
 });
 
 function wheelObject(indexObject, targetObject, startWheelPosition) {
+	theWheelObject = this;
 	this.indexObject = indexObject;
 	this.targetObject = targetObject;
 	this.startWheelPosition = typeof startWheelPosition == 'undefined' ? 0 : startWheelPosition;
@@ -34,13 +35,13 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
 		if (turnsRight < this.half) {
 			//Move to the right
-			this.rotate(this.indexObject, parseFloat(turnsRight * 360) / this.totalObjects);
-			this.rotate(this.targetObject, parseFloat(turnsRight * 360) / this.totalObjects);
+			theWheelObject.rotate(this.indexObject, parseFloat(turnsRight * 360) / this.totalObjects);
+			theWheelObject.rotate(this.targetObject, parseFloat(turnsRight * 360) / this.totalObjects);
 		} else {
 			//Move to the left
 			var turnsLeft = this.totalObjects - moveToIndex - 1;
-			this.rotate(this.indexObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
-			this.rotate(this.targetObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
+			theWheelObject.rotate(this.indexObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
+			theWheelObject.rotate(this.targetObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
 		}
 		//Take it back now, y'all
 	});
