@@ -81,9 +81,9 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		//Take it back now, y'all
 		$('.wheelContent').each(function(index, elem) {
 			if ($(elem).attr('data-wheel-position') == moveToIndex.toString()) {
-				$(elem).css('opacity':'1');
+				$(elem).css('opacity', '1');
 			} else {
-				$(elem).css('opacity':'0');
+				$(elem).css('opacity', '0');
 			}
 		});
 		theWheelObject.currentWheelPosition = moveToIndex;
