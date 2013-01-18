@@ -36,7 +36,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	} else {
 		this.currentAngle = this.currentWheelPosition > this.half ? parseFloat(this.currentWheelPosition * 360) / theWheelObject.totalObjects : - parseFloat(theWheelObject.totalObjects - this.currentWheelPosition) * 360 / theWheelObject.totalObjects;
 	}
-	console.log('currentAngle is ' + this.currentAngle.toString());
+	this.targetObject.children('[data-wheel-position=="' + this.currentWheelPosition + '"]').show();
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
 		var moveToIndex = parseInt($(this).attr('data-wheel-position'));
@@ -81,9 +81,9 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		//Take it back now, y'all
 		$('.wheelContent').each(function(index, elem) {
 			if ($(elem).attr('data-wheel-position') == moveToIndex.toString()) {
-				$(elem).show();
+				$(elem).css('opacity':'1');
 			} else {
-				$(elem).hide();
+				$(elem).css('opacity':'0');
 			}
 		});
 		theWheelObject.currentWheelPosition = moveToIndex;
