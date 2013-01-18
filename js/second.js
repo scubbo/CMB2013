@@ -68,6 +68,7 @@ function getCurrentAngle(target) {
 	if (theCurrent == 'none') {
 		return 0;
 	}
+	console.log($(target).css('-webkit-transform'));
 	return parseInt($(target).css('-webkit-transform').replace('rotate(', '').replace(re, ''));
 }
 
