@@ -24,9 +24,6 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.half = this.totalObjects/2;
 
 	this.indexObject.children('div.indexWheelLink').click(function() {
-		console.log($(this));
-		console.log('------');
-		console.log(theWheelObject);
 		var moveToIndex = $(this).attr('data-wheel-position');
 		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
 		if (turnsRight < this.half) {
@@ -54,6 +51,9 @@ function getCurrentAngle(target) {
 
 function rotate(targetObject, deg, right) {
 	right = typeof right == 'undefined' ? true : right;
+	console.log('-------');
+	console.log(targetObject);
+	console.log('>>>>>>>');
 	var currentAngle = getCurrentAngle(targetObject);
 	targetAngle = right ? currentAngle + deg : currentAngle - deg;
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
