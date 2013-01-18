@@ -11,6 +11,7 @@ $(document).ready(function() {
 	});
 
 	$('#wheelViewport').height(pageHeight).width(pageWidth);
+	$('#wheel').height(2*pageHeight);
 	$('.wheelContent').each(function(index, elem) {
 		var contentWidth = 800; //Might need to change this
 		console.log('new');
