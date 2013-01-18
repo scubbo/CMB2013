@@ -11,6 +11,7 @@ $(document).ready(function() {
 	});
 
 	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'));
+	console.log(myWheel);
 });
 
 function wheelObject(indexObject, targetObject, startWheelPosition) {
@@ -20,6 +21,12 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.currentWheelPosition = startWheelPosition;
 	this.totalObjects = this.targetObject.children('div.indexWheelLink').length;
 	this.half = this.totalObjects/2;
+
+	console.log('creating a wheel');
+	console.log('target Object is ');
+	console.log(this.targetObject);
+	console.log('and its children are');
+	console.log(this.targetObject.children);
 
 	this.targetObject.children('div.indexWheelLink').click(function() {
 		console.log($(this));
