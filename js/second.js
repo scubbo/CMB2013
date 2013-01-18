@@ -42,17 +42,17 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		//Take it back now, y'all
 	});
 
-	function getCurrentAngle(target) {
-		var re = /deg\) translateY.*/;
-		return parseInt($(target).css('-webkit-transform').replace('rotate(', '').replace(re, ''));
-	}
-
 }
 
 
+function getCurrentAngle(target) {
+	var re = /deg\) translateY.*/;
+	return parseInt($(target).css('-webkit-transform').replace('rotate(', '').replace(re, ''));
+}
+
 function rotate(targetObject, deg, right) {
 	right = typeof right == 'undefined' ? true : right;
-	var currentAngle = this.getCurrentAngle(targetObject);
+	var currentAngle = getCurrentAngle(targetObject);
 	targetAngle = right ? currentAngle + deg : currentAngle - deg;
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
 	for (var i = 0;i<transforms.length;i++) {
