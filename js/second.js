@@ -33,8 +33,10 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		var moveToIndex = $(this).attr('data-wheel-position');
 		var turnsRight;
 		if (moveToIndex > theWheelObject.currentWheelPosition) {
+			console.log('case a1');
 			turnsRight = moveToIndex - theWheelObject.currentWheelPosition;
 		} else {
+			console.log('case a2');
 			turnsRight = theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
 		}
 		//var turnsRight = moveToIndex > theWheelObject.currentWheelPosition ? moveToIndex - theWheelObject.currentWheelPosition : theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
