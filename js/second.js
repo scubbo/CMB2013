@@ -34,7 +34,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		}
 		//var turnsRight = moveToIndex > theWheelObject.currentWheelPosition ? moveToIndex - theWheelObject.currentWheelPosition : theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
 		console.log('turnsRight is ' + turnsRight.toString());
-		if (turnsRight < this.half) {
+		if (turnsRight < theWheelObject.half) {
 			//Move to the right
 			console.log('case 1');
 			console.log(turnsRight);
