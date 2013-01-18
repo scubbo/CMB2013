@@ -23,15 +23,15 @@ body.mainPage, body.secondPage {
 	width: 100px;
 	height:100px;
 }
-.secondPage #wheelContainer {
+.secondPage #indexWheelContainer {
 	position:absolute;
 	height:400px;
 	width:400px;
 }
-.secondPage .wheelLink {
+.secondPage .indexWheelLink {
 	position:absolute;
 	top:176px;
 }
-.secondPage .wheelLinkImage {
+.secondPage .indexWheelLinkImage {
 	height:48px;
 }

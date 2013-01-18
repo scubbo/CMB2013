@@ -53,7 +53,7 @@ function makeFragments(number) {
 		var left = fragmentPositions[index]['x'];
 		var top = fragmentPositions[index]['y'];
 		var rotate = fragmentPositions[index]['rot'];
-		theFragment.css({left:left.toString() + '%', top:top.toString() + '%', -webkit-transform:'rotate(' + rotate.toString() + 'deg)', -moz-transform:'rotate(' + rotate.toString() + 'deg)', -o-transform:'rotate(' + rotate.toString() + 'deg)', transform:'rotate(' + rotate.toString() + 'deg)'});
+		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
 	});
 }
 
