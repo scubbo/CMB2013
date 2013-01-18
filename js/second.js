@@ -24,28 +24,27 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.half = this.totalObjects/2;
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
-		console.log(theWheelObject);
 		var moveToIndex = $(this).attr('data-wheel-position');
 		var turnsRight;
 		if (moveToIndex > currentWheelPosition) {
-			turnsRight = moveToIndex - currentWheelPosition;
+			turnsRight = moveToIndex - theWheelObject.currentWheelPosition;
 		} else {
-			turnsRight = totalObjects - currentWheelPosition + moveToIndex;
+			turnsRight = theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
 		}
-		//var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
+		//var turnsRight = moveToIndex > theWheelObject.currentWheelPosition ? moveToIndex - theWheelObject.currentWheelPosition : theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
 		console.log('turnsRight is ' + turnsRight.toString());
 		if (turnsRight < this.half) {
 			//Move to the right
-			rotate(indexObject, parseFloat(turnsRight * 360) / this.totalObjects);
-			rotate(targetObject, parseFloat(turnsRight * 360) / this.totalObjects);
+			rotate(indexObject, parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
+			rotate(targetObject, parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
 		} else {
 			//Move to the left
-			var turnsLeft = this.totalObjects - moveToIndex - 1;
-			rotate(indexObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
-			rotate(targetObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
+			var turnsLeft = theWheelObject.totalObjects - moveToIndex - 1;
+			rotate(indexObject, parseFloat(turnsLeft * 360) / theWheelObject.totalObjects, false);
+			rotate(targetObject, parseFloat(turnsLeft * 360) / theWheelObject.totalObjects, false);
 		}
 		//Take it back now, y'all
-		currentWheelPosition = moveToIndex;
+		theWheelObject.currentWheelPosition = moveToIndex;
 	});
 
 }
