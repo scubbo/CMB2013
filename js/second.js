@@ -34,13 +34,13 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
 		if (turnsRight < this.half) {
 			//Move to the right
-			this.rotate(this.indexObject, float(turnsRight * 360) / totalObjects);
-			this.rotate(this.targetObject, float(turnsRight * 360) / totalObjects);
+			this.rotate(this.indexObject, parseFloat(turnsRight * 360) / totalObjects);
+			this.rotate(this.targetObject, parseFloat(turnsRight * 360) / totalObjects);
 		} else {
 			//Move to the left
 			var turnsLeft = this.totalObjects - moveToIndex - 1;
-			this.rotate(this.indexObject, float(turnsLeft * 360) / totalObjects, false);
-			this.rotate(this.targetObject, float(turnsLeft * 360) / totalObjects, false);
+			this.rotate(this.indexObject, parseFloat(turnsLeft * 360) / totalObjects, false);
+			this.rotate(this.targetObject, parseFloat(turnsLeft * 360) / totalObjects, false);
 		}
 		//Take it back now, y'all
 	});
