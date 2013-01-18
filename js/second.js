@@ -18,7 +18,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	theWheelObject = this;
 	this.indexObject = indexObject;
 	this.targetObject = targetObject;
-	this.startWheelPosition = typeof startWheelPosition == 'undefined' ? 0 : startWheelPosition;
+	this.startWheelPosition = typeof startWheelPosition !== 'undefined' ? startWheelPosition : 0;
 	this.currentWheelPosition = startWheelPosition;
 	this.totalObjects = this.targetObject.children('div.indexWheelLink').length;
 	this.half = this.totalObjects/2;
