@@ -39,7 +39,9 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.targetObject.children().each(function(index, elem) {
 		if ($(elem).attr('data-wheel-position') == this.currentWheelPosition) {
 			$(elem).css('opacity', '1');
+			console.log('making visible');
 		}
+		console.log('testing ' + index.toString());
 	});
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
