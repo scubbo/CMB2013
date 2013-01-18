@@ -30,7 +30,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	console.log('currentAngle is ' + this.currentAngle.toString());
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
-		var moveToIndex = $(this).attr('data-wheel-position');
+		var moveToIndex = parseInt($(this).attr('data-wheel-position'));
 		var turnsRight;
 		if (moveToIndex > theWheelObject.currentWheelPosition) {
 			console.log('case a1');
