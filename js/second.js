@@ -59,9 +59,7 @@ function rotate(targetObject, deg, right) {
 	for (var i = 0;i<transforms.length;i++) {
 		var theTransform = transforms[i];
 		var currentCSS = $(targetObject).css(theTransform);
-		console.log(typeof $(targetObject).css(theTransform));
-		console.log($(targetObject).css(theTransform));
-		if (currentCSS == 'none') {
+		if (currentCSS == 'none' || typeof currentCSS == 'undefined') {
 			$(targetObject).css(theTransform, 'rotate(' + targetAngle.toString() + 'deg)');
 		} else {
 			$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2'));
