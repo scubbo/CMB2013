@@ -38,3 +38,9 @@ body.mainPage, body.secondPage {
 .secondPage .indexWheelLinkImage {
 	height:48px;
 }
+.secondPage #indexWheelContainer, .secondPages #wheel {
+	-webkit-transition: -webkit-transform 300ms ease-in, opacity 300ms ease-in;
+	-moz-transition: -moz-transform 300ms ease-in, opacity 300ms ease-in;
+	-o-transition: -o-transform 300ms ease-in, opacity 300ms ease-in;
+	transition: transform 300ms ease-in, opacity 300ms ease-in;
+}
