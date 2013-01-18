@@ -38,7 +38,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	}
 	this.targetObject.children().each(function(index, elem) {
 		if ($(elem).attr('data-wheel-position') == this.currentWheelPosition) {
-			$(elem).show()
+			$(elem).css('opacity', '1');
 		}
 	});
 
