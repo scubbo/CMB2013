@@ -22,7 +22,11 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.currentWheelPosition = this.startWheelPosition;
 	this.totalObjects = this.indexObject.children('div.indexWheelLink').length;
 	this.half = this.totalObjects/2;
-	this.currentAngle = this.currentWheelPosition > this.half ? parseFloat(this.currentWheelPosition * 360) / theWheelObject.totalObjects : - parseFloat(theWheelObject.totalObjects - this.currentWheelPosition) * 360 / theWheelObject.totalObjects;
+	if (this.currentWheelPosition == 0) {
+		this.currentAngle = 0
+	} else {
+		this.currentAngle = this.currentWheelPosition > this.half ? parseFloat(this.currentWheelPosition * 360) / theWheelObject.totalObjects : - parseFloat(theWheelObject.totalObjects - this.currentWheelPosition) * 360 / theWheelObject.totalObjects;
+	}
 	console.log('currentAngle is ' + this.currentAngle.toString());
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
