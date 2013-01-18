@@ -46,6 +46,10 @@ function getCurrentAngle(target) {
 	var re = /deg\) translateY.*/;
 	console.log($(target));
 	console.log($(target).css('-webkit-transform'));
+	var theCurrent = $(target).css('-webkit-transform');
+	if (theCurrent == none) {
+		return 0;
+	}
 	return parseInt($(target).css('-webkit-transform').replace('rotate(', '').replace(re, ''));
 }
 
