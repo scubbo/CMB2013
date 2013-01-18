@@ -62,19 +62,19 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 }
 
 
-function getCurrentAngle(target) {
-	var re = /deg\) translateY.*/;
-	var theCurrent = $(target).css('webkitTransform');
-	if (theCurrent == 'none') {
-		return 0;
-	}
-	console.log($(target).css('webkitTransform'));
-	console.log($(target).css('mozTransform'));
-	console.log($(target).css('-moz-transform'));
-	console.log($(target).css('oTransform'));
-	console.log($(target).css('-o-transform'));
-	console.log($(target).css('transform'));
-	return parseInt($(target).css('webkitTransform').replace('rotate(', '').replace(re, ''));
+function getCurrentAngle(obj) {
+    var matrix = obj.css("-webkit-transform") ||
+    obj.css("-moz-transform")    ||
+    obj.css("-ms-transform")     ||
+    obj.css("-o-transform")      ||
+    obj.css("transform");
+    if(matrix !== 'none') {
+        var values = matrix.split('(')[1].split(')')[0].split(',');
+        var a = values[0];
+        var b = values[1];
+        var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+    } else { var angle = 0; }
+    return angle;
 }
 
 function rotate(targetObject, deg, right) {
