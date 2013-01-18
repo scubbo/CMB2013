@@ -12,9 +12,9 @@ $(document).ready(function() {
 
 	$('#wheelViewport').height(pageHeight).width(pageWidth);
 	$('.wheelContent').each(function(index, elem) {
-		var contentWidth = 2000; //Might need to change this
+		var contentWidth = 800; //Might need to change this
 		console.log('new');
-		$(elem).css({'left':((2000 - contentWidth)/2.0).toString() + 'px'})
+		$(elem).css({'left':((800 - contentWidth)/2.0).toString() + 'px'})
 		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', 'transform-origin':'center top'});
 	});
 

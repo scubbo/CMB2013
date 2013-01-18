@@ -46,7 +46,7 @@ body.mainPage, body.secondPage {
 }
 .secondPage .wheelContent {
 	position:absolute;
-	width:2000px;
+	width:800px;
 }
 .secondPage .wheelContent p {
 	color:white:
