@@ -22,7 +22,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.currentWheelPosition = this.startWheelPosition;
 	this.totalObjects = this.indexObject.children('div.indexWheelLink').length;
 	this.half = this.totalObjects/2;
-	console.log('this.half is ' + this.half.toString());
+	this.currentAngle = this.currentWheelPosition > this.half ? parseFloat(this.currentWheelPosition * 360) / theWheelObject.totalObjects : - parseFloat(theWheelObject.totalObjects - this.currentWheelPosition) * 360 / theWheelObject.totalObjects;
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
 		var moveToIndex = $(this).attr('data-wheel-position');
@@ -34,6 +34,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		}
 		//var turnsRight = moveToIndex > theWheelObject.currentWheelPosition ? moveToIndex - theWheelObject.currentWheelPosition : theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
 		console.log('turnsRight is ' + turnsRight.toString());
+		var targetAngle;
 		if (turnsRight < theWheelObject.half) {
 			//Move to the right
 			console.log('case 1');
@@ -41,8 +42,9 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			console.log(turnsRight * 360);
 			console.log(parseFloat(turnsRight * 360));
 			console.log(parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
-			rotate(indexObject, parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
-			rotate(targetObject, parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
+			targetAngle = theWheelObject.currentAngle - (parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
+			rotateTo(indexObject, targetAngle);
+			rotateTo(targetObject, targetAngle);
 		} else {
 			//Move to the left
 			var turnsLeft = theWheelObject.totalObjects - moveToIndex;
@@ -51,12 +53,14 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			console.log(turnsLeft * 360);
 			console.log(parseFloat(turnsLeft * 360));
 			console.log(parseFloat(turnsLeft * 360) / theWheelObject.totalObjects);
-			rotate(indexObject, parseFloat(turnsLeft * 360) / theWheelObject.totalObjects, false);
-			rotate(targetObject, parseFloat(turnsLeft * 360) / theWheelObject.totalObjects, false);
+			targetAngle = theWheelObject.currentAngle + (parseFloat(turnsLeft * 360) / theWheelObject.totalObjects);
+			rotateTo(indexObject, targetAngle);
+			rotateTo(targetObject, targetAngle);
 		}
 		//Take it back now, y'all
 		theWheelObject.currentWheelPosition = moveToIndex;
 		console.log('current WheelPosition is now ' + moveToIndex.toString());
+		theWheelObject.currentAngle = targetAngle
 	});
 
 }
@@ -77,23 +81,11 @@ function getCurrentAngle(obj) {
     return angle;
 }
 
-function rotate(targetObject, deg, right) {
-	right = typeof right == 'undefined' ? true : right;
-	var currentAngle = getCurrentAngle(targetObject);
-	console.log('current Angle is ');
-	console.log(currentAngle);
-	console.log('deg is ');
-	console.log(deg);
-	console.log('right is ');
-	console.log(right);
-	targetAngle = right ? currentAngle - deg : currentAngle + deg;
-	console.log('targetAngle is ');
-	console.log(targetAngle);
+function rotateTo(targetObject, deg) {
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
 	for (var i = 0;i<transforms.length;i++) {
 		var theTransform = transforms[i];
-		var currentCSS = $(targetObject).css(theTransform);
-		$(targetObject).css(theTransform, 'rotate(' + targetAngle.toString() + 'deg)');
+		$(targetObject).css(theTransform, 'rotate(' + deg.toString() + 'deg)');
 	}
 }
 
