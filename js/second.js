@@ -47,6 +47,8 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 
 function getCurrentAngle(target) {
 	var re = /deg\) translateY.*/;
+	console.log($(target));
+	console.log($(target).css('-webkit-transform'));
 	return parseInt($(target).css('-webkit-transform').replace('rotate(', '').replace(re, ''));
 }
 
