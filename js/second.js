@@ -28,13 +28,13 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
 		if (turnsRight < this.half) {
 			//Move to the right
-			rotate(this.indexObject, parseFloat(turnsRight * 360) / this.totalObjects);
-			rotate(this.targetObject, parseFloat(turnsRight * 360) / this.totalObjects);
+			rotate(indexObject, parseFloat(turnsRight * 360) / this.totalObjects);
+			rotate(targetObject, parseFloat(turnsRight * 360) / this.totalObjects);
 		} else {
 			//Move to the left
 			var turnsLeft = this.totalObjects - moveToIndex - 1;
-			rotate(this.indexObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
-			rotate(this.targetObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
+			rotate(indexObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
+			rotate(targetObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
 		}
 		//Take it back now, y'all
 	});
@@ -51,9 +51,6 @@ function getCurrentAngle(target) {
 
 function rotate(targetObject, deg, right) {
 	right = typeof right == 'undefined' ? true : right;
-	console.log('-------');
-	console.log(targetObject);
-	console.log('>>>>>>>');
 	var currentAngle = getCurrentAngle(targetObject);
 	targetAngle = right ? currentAngle + deg : currentAngle - deg;
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
