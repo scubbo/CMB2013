@@ -63,7 +63,6 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 
 
 function getCurrentAngle(obj) {
-	console.log('new current angle');
     var matrix = obj.css("-webkit-transform") ||
     obj.css("-moz-transform")    ||
     obj.css("-ms-transform")     ||
@@ -81,7 +80,9 @@ function getCurrentAngle(obj) {
 function rotate(targetObject, deg, right) {
 	right = typeof right == 'undefined' ? true : right;
 	var currentAngle = getCurrentAngle(targetObject);
+	console.log('current Angle is ');
 	console.log(currentAngle);
+	console.log('deg is ');
 	console.log(deg);
 	targetAngle = right ? currentAngle - deg : currentAngle + deg;
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
