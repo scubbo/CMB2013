@@ -38,7 +38,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			this.rotate(this.targetObject, float(turnsRight * 360) / totalObjects);
 		} else {
 			//Move to the left
-			var turnsLeft = totalObjects - moveToIndex - 1;
+			var turnsLeft = this.totalObjects - moveToIndex - 1;
 			this.rotate(this.indexObject, float(turnsLeft * 360) / totalObjects, false);
 			this.rotate(this.targetObject, float(turnsLeft * 360) / totalObjects, false);
 		}
