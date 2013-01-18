@@ -9,7 +9,51 @@ $(document).ready(function() {
 		var theWidth = imageWidths[index];
 		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'left':(200-(theWidth/2.0)).toString() + 'px'});
 	});
+
+	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'));
 });
+
+function wheelObject(indexObject, targetObject, startWheelPosition) {
+	this.indexObject = indexObject;
+	this.targetObject = targetObject;
+	this.startWheelPosition = typeof startWheelPosition === 'undefined' ? 0 : startWheelPosition;
+	this.currentWheelPosition = startWheelPosition;
+	this.totalObjects = this.targetObject.children('div.indexWheelLink').length;
+	this.half = this.totalObjects/2;
+
+	this.targetObject.children('div.indexWheelLink').click(function() {
+		console.log($(this));
+		var moveToIndex = $(this).attr('data-wheel-position');
+		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
+		if (turnsRight < this.half) {
+			//Move to the right
+			this.rotate(this.indexObject, float(turnsRight * 360) / totalObjects);
+			this.rotate(this.targetObject, float(turnsRight * 360) / totalObjects);
+		} else {
+			//Move to the left
+			var turnsLeft = totalObjects - moveToIndex - 1;
+			this.rotate(this.indexObject, float(turnsLeft * 360) / totalObjects, false);
+			this.rotate(this.targetObject, float(turnsLeft * 360) / totalObjects, false);
+		}
+		//Take it back now, y'all
+	});
+
+	function getCurrentAngle(target) {
+		var re = /deg\) translateY.*/;
+		return parseInt($(target).css('-webkit-transform').replace('rotate(', '')).replace(re, ''));
+	}
+
+	function rotate(targetObject, deg, right) {
+		right = typeof right === 'undefined' ? true : right;
+		var currentAngle = this.getCurrentAngle(targetObject);
+		targetAngle = right ? currentAngle + deg : currentAngle - deg;
+		var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
+		for (var i = 0;i<transforms.length;i++) {
+			var theTransform = transforms[i];
+			$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2');
+		}
+	}
+}
 
 var imageWidths = [
 	197, 
@@ -18,4 +62,54 @@ var imageWidths = [
 	174, 
 	100,
 	168
-]
+];
+
+var range = function(start, end, step) {
+    var range = [];
+    var typeofStart = typeof start;
+    var typeofEnd = typeof end;
+
+    if (step === 0) {
+        throw TypeError("Step cannot be zero.");
+    }
+
+    if (typeofStart == "undefined" || typeofEnd == "undefined") {
+        throw TypeError("Must pass start and end arguments.");
+    } else if (typeofStart != typeofEnd) {
+        throw TypeError("Start and end arguments must be of same type.");
+    }
+
+    typeof step == "undefined" && (step = 1);
+
+    if (end < start) {
+        step = -step;
+    }
+
+    if (typeofStart == "number") {
+
+        while (step > 0 ? end >= start : end <= start) {
+            range.push(start);
+            start += step;
+        }
+
+    } else if (typeofStart == "string") {
+
+        if (start.length != 1 || end.length != 1) {
+            throw TypeError("Only strings with one character are supported.");
+        }
+
+        start = start.charCodeAt(0);
+        end = end.charCodeAt(0);
+
+        while (step > 0 ? end >= start : end <= start) {
+            range.push(String.fromCharCode(start));
+            start += step;
+        }
+
+    } else {
+        throw TypeError("Only string and number types are supported");
+    }
+
+    return range;
+
+}

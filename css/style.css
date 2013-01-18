@@ -23,6 +23,9 @@ body.mainPage, body.secondPage {
 	width: 100px;
 	height:100px;
 }
+.secondPage {
+	background-color:#000;
+}
 .secondPage #indexWheelContainer {
 	position:absolute;
 	height:400px;
