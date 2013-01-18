@@ -56,6 +56,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		}
 		//Take it back now, y'all
 		theWheelObject.currentWheelPosition = moveToIndex;
+		console.log('current WheelPosition is now ' + moveToIndex.toString());
 	});
 
 }
@@ -81,7 +82,9 @@ function rotate(targetObject, deg, right) {
 		if (currentCSS == 'none' || typeof currentCSS == 'undefined') {
 			$(targetObject).css(theTransform, 'rotate(' + targetAngle.toString() + 'deg)');
 		} else {
-			$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2'));
+			var textToMake = $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + taretAngle.toString() + '$2');
+			console.log(textToMake);
+			$(targetObject).css(theTransform, textToMake);
 		}
 	}
 }
