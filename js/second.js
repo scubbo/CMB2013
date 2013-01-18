@@ -25,9 +25,16 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 
 	this.indexObject.children('div.indexWheelLink').click(function() {
 		console.log('being clicked');
+		console.log('test ---- ' + currentWheelPosition);
 		var moveToIndex = $(this).attr('data-wheel-position');
 		console.log('moveToIndex is ' + moveToIndex.toString());
-		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
+		var turnsRight;
+		if moveToIndex > this.currentWheelPosition {
+			turnsRight = moveToIndex - currentWheelPosition;
+		} else {
+			turnsRight = totalObjects - currentWheelPosition + moveToIndex;
+		}
+		//var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
 		console.log('turnsRight is ' + turnsRight.toString());
 		if (turnsRight < this.half) {
 			//Move to the right
