@@ -10,8 +10,13 @@ $(document).ready(function() {
 		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'left':(200-(theWidth/2.0)).toString() + 'px'});
 	});
 
+	$('#wheelViewport').height(pageHeight).width(pageWidth);
+	$('.wheelContent').each(function(index, elem) {
+		var contentWidth = 2000; //Might need to change this
+		$(elem).css({'left':((2000 - theWidth)/2.0).toString()}).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight() + 'px)', 'transform-origin':'center top'});
+	});
+
 	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'));
-	console.log(myWheel);
 });
 
 function wheelObject(indexObject, targetObject, startWheelPosition) {
