@@ -50,6 +50,9 @@ body.mainPage, body.secondPage {
 }
 .secondPage .wheelContent p {
 	color:white:
+	text-align:center;
+	font-weight:bold;
+	font-size:30px;
 }
 .secondPage #indexWheelContainer, .secondPage #wheel {
 	-webkit-transition: -webkit-transform 300ms ease-in, opacity 300ms ease-in;
