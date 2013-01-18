@@ -45,7 +45,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			rotate(targetObject, parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
 		} else {
 			//Move to the left
-			var turnsLeft = theWheelObject.totalObjects - moveToIndex - 1;
+			var turnsLeft = theWheelObject.totalObjects - moveToIndex;
 			console.log('case 2');
 			console.log(turnsLeft);
 			console.log(turnsLeft * 360);
@@ -71,10 +71,9 @@ function getCurrentAngle(target) {
 }
 
 function rotate(targetObject, deg, right) {
-	console.log('calling rotate on ');
 	right = typeof right == 'undefined' ? true : right;
 	var currentAngle = getCurrentAngle(targetObject);
-	targetAngle = right ? currentAngle + deg : currentAngle - deg;
+	targetAngle = right ? currentAngle - deg : currentAngle + deg;
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
 	for (var i = 0;i<transforms.length;i++) {
 		var theTransform = transforms[i];
