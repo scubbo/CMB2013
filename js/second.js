@@ -64,12 +64,12 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 
 function getCurrentAngle(target) {
 	var re = /deg\) translateY.*/;
-	var theCurrent = $(target).css('-webkit-transform');
+	var theCurrent = $(target).css('webkitTransform');
 	if (theCurrent == 'none') {
 		return 0;
 	}
-	console.log($(target).css('-webkit-transform'));
-	return parseInt($(target).css('-webkit-transform').replace('rotate(', '').replace(re, ''));
+	console.log($(target).css('webkitTransform'));
+	return parseInt($(target).css('webkitTransform').replace('rotate(', '').replace(re, ''));
 }
 
 function rotate(targetObject, deg, right) {
