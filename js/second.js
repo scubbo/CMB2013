@@ -70,6 +70,8 @@ function getCurrentAngle(target) {
 	}
 	console.log($(target).css('webkitTransform'));
 	console.log($(target).css('mozTransform'));
+	console.log($(target).css('-moz-transform'));
+	console.log($(target).css('oTransform'));
 	console.log($(target).css('-o-transform'));
 	console.log($(target).css('transform'));
 	return parseInt($(target).css('webkitTransform').replace('rotate(', '').replace(re, ''));
