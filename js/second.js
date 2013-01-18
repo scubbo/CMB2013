@@ -22,6 +22,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.currentWheelPosition = this.startWheelPosition;
 	this.totalObjects = this.indexObject.children('div.indexWheelLink').length;
 	this.half = this.totalObjects/2;
+	console.log('this.half is ' + this.half.toString());
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
 		var moveToIndex = $(this).attr('data-wheel-position');
