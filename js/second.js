@@ -79,6 +79,13 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			rotateTo(targetObject, targetAngle);
 		}
 		//Take it back now, y'all
+		$('.wheelContent').each(function(index, elem) {
+			if ($(elem).attr('data-wheel-position') == moveToIndex.toString()) {
+				$(elem).show();
+			} else {
+				$(elem).hide();
+			}
+		});
 		theWheelObject.currentWheelPosition = moveToIndex;
 		console.log('current WheelPosition is now ' + moveToIndex.toString());
 		theWheelObject.currentAngle = targetAngle

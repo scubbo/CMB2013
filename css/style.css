@@ -47,6 +47,7 @@ body.mainPage, body.secondPage {
 .secondPage .wheelContent {
 	position:absolute;
 	width:800px;
+	display:none;
 }
 .secondPage .wheelContent p {
 	color:white;
@@ -54,7 +55,7 @@ body.mainPage, body.secondPage {
 	font-weight:bold;
 	font-size:30px;
 }
-.secondPage #indexWheelContainer, .secondPage #wheel {
+.secondPage #indexWheelContainer, .secondPage #wheel, .secondPage .wheelContent {
 	-webkit-transition: -webkit-transform 300ms ease-in, opacity 300ms ease-in;
 	-moz-transition: -moz-transform 300ms ease-in, opacity 300ms ease-in;
 	-o-transition: -o-transform 300ms ease-in, opacity 300ms ease-in;
