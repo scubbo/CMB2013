@@ -74,6 +74,8 @@ function getCurrentAngle(target) {
 function rotate(targetObject, deg, right) {
 	right = typeof right == 'undefined' ? true : right;
 	var currentAngle = getCurrentAngle(targetObject);
+	console.log(currentAngle);
+	console.log(deg);
 	targetAngle = right ? currentAngle - deg : currentAngle + deg;
 	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
 	for (var i = 0;i<transforms.length;i++) {
