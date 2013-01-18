@@ -50,7 +50,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
 		for (var i = 0;i<transforms.length;i++) {
 			var theTransform = transforms[i];
-			$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2');
+			$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2'));
 		}
 	}
 }
