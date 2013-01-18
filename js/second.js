@@ -31,13 +31,13 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
 		if (turnsRight < this.half) {
 			//Move to the right
-			theWheelObject.rotate(this.indexObject, parseFloat(turnsRight * 360) / this.totalObjects);
-			theWheelObject.rotate(this.targetObject, parseFloat(turnsRight * 360) / this.totalObjects);
+			rotate(this.indexObject, parseFloat(turnsRight * 360) / this.totalObjects);
+			rotate(this.targetObject, parseFloat(turnsRight * 360) / this.totalObjects);
 		} else {
 			//Move to the left
 			var turnsLeft = this.totalObjects - moveToIndex - 1;
-			theWheelObject.rotate(this.indexObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
-			theWheelObject.rotate(this.targetObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
+			rotate(this.indexObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
+			rotate(this.targetObject, parseFloat(turnsLeft * 360) / this.totalObjects, false);
 		}
 		//Take it back now, y'all
 	});
@@ -47,15 +47,17 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		return parseInt($(target).css('-webkit-transform').replace('rotate(', '').replace(re, ''));
 	}
 
-	function rotate(targetObject, deg, right) {
-		right = typeof right == 'undefined' ? true : right;
-		var currentAngle = this.getCurrentAngle(targetObject);
-		targetAngle = right ? currentAngle + deg : currentAngle - deg;
-		var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
-		for (var i = 0;i<transforms.length;i++) {
-			var theTransform = transforms[i];
-			$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2'));
-		}
+}
+
+
+function rotate(targetObject, deg, right) {
+	right = typeof right == 'undefined' ? true : right;
+	var currentAngle = this.getCurrentAngle(targetObject);
+	targetAngle = right ? currentAngle + deg : currentAngle - deg;
+	var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
+	for (var i = 0;i<transforms.length;i++) {
+		var theTransform = transforms[i];
+		$(targetObject).css(theTransform, $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2'));
 	}
 }
 
