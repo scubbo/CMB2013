@@ -24,12 +24,18 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.half = this.totalObjects/2;
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
+		console.log('being clicked');
 		var moveToIndex = $(this).attr('data-wheel-position');
+		console.log('move To Index is ' + moveToIndex.toString());
 		var turnsRight;
 		if (moveToIndex > theWheelObject.currentWheelPosition) {
+			console.log('case 1');
 			turnsRight = moveToIndex - theWheelObject.currentWheelPosition;
+			console.log(moveToIndex.toString + ' - ' + theWheelObject.currentWheelPosition.toString());
 		} else {
+			console.log('case 2');
 			turnsRight = theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
+			console.log(theWheelObject.totalObjects.toString() + ' - ' + theWheelObject.currentWheelPosition.toString() + ' - ' + moveToIndex.toString());
 		}
 		//var turnsRight = moveToIndex > theWheelObject.currentWheelPosition ? moveToIndex - theWheelObject.currentWheelPosition : theWheelObject.totalObjects - theWheelObject.currentWheelPosition + moveToIndex;
 		console.log('turnsRight is ' + turnsRight.toString());
