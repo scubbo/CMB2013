@@ -21,6 +21,9 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.startWheelPosition = typeof startWheelPosition !== 'undefined' ? startWheelPosition : 0;
 	this.currentWheelPosition = this.startWheelPosition;
 	this.totalObjects = this.targetObject.children('div.indexWheelLink').length;
+	console.log(this.targetObject);
+	console.log(this.targetObject.children('div.indexWheelLink'));
+	console.log(this.totalObjects);
 	this.half = this.totalObjects/2;
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
