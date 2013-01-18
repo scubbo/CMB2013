@@ -17,7 +17,7 @@ $(document).ready(function() {
 function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.indexObject = indexObject;
 	this.targetObject = targetObject;
-	this.startWheelPosition = typeof startWheelPosition === 'undefined' ? 0 : startWheelPosition;
+	this.startWheelPosition = typeof startWheelPosition == 'undefined' ? 0 : startWheelPosition;
 	this.currentWheelPosition = startWheelPosition;
 	this.totalObjects = this.targetObject.children('div.indexWheelLink').length;
 	this.half = this.totalObjects/2;
@@ -26,7 +26,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	console.log('target Object is ');
 	console.log(this.targetObject);
 	console.log('and its children are');
-	console.log(this.targetObject.children);
+	console.log(this.targetObject.children());
 
 	this.targetObject.children('div.indexWheelLink').click(function() {
 		console.log($(this));
@@ -51,7 +51,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	}
 
 	function rotate(targetObject, deg, right) {
-		right = typeof right === 'undefined' ? true : right;
+		right = typeof right == 'undefined' ? true : right;
 		var currentAngle = this.getCurrentAngle(targetObject);
 		targetAngle = right ? currentAngle + deg : currentAngle - deg;
 		var transforms = ['-webkit-transform', '-o-transform', '-moz-transform', 'transform'];
