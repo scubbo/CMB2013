@@ -82,7 +82,8 @@ function rotate(targetObject, deg, right) {
 		if (currentCSS == 'none' || typeof currentCSS == 'undefined') {
 			$(targetObject).css(theTransform, 'rotate(' + targetAngle.toString() + 'deg)');
 		} else {
-			var textToMake = $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + taretAngle.toString() + '$2');
+			console.log(targetAngle.toString());
+			var textToMake = $(targetObject).css(theTransform).replace(/(rotate\()\d*(.*)/, '$1' + targetAngle.toString() + '$2');
 			console.log(textToMake);
 			$(targetObject).css(theTransform, textToMake);
 		}
