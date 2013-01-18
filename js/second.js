@@ -13,7 +13,8 @@ $(document).ready(function() {
 	$('#wheelViewport').height(pageHeight).width(pageWidth);
 	$('.wheelContent').each(function(index, elem) {
 		var contentWidth = 2000; //Might need to change this
-		$(elem).css({'left':((2000 - contentWidth)/2.0).toString()}).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight() + 'px)', 'transform-origin':'center top'});
+		$(elem).css({'left':((2000 - contentWidth)/2.0).toString()})
+		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight() + 'px)', 'transform-origin':'center top'});
 	});
 
 	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'));
