@@ -23,14 +23,10 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.totalObjects = this.targetObject.children('div.indexWheelLink').length;
 	this.half = this.totalObjects/2;
 
-	console.log('creating a wheel');
-	console.log('index Object is ');
-	console.log(this.indexObject);
-	console.log('and its children are');
-	console.log(this.indexObject.children());
-
 	this.indexObject.children('div.indexWheelLink').click(function() {
 		console.log($(this));
+		console.log('------');
+		console.log(theWheelObject);
 		var moveToIndex = $(this).attr('data-wheel-position');
 		var turnsRight = moveToIndex > this.currentWheelPosition ? moveToIndex - this.currentWheelPosition : this.totalObjects - this.currentWheelPosition + moveToIndex;
 		if (turnsRight < this.half) {
