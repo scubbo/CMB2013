@@ -28,6 +28,8 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		var moveToIndex = $(this).attr('data-wheel-position');
 		console.log('move To Index is ' + moveToIndex.toString());
 		var turnsRight;
+		console.log(theWheelObject.totalObjects.toString());
+		console.log(theWheelObject.currentWheelPosition.toString());
 		if (moveToIndex > theWheelObject.currentWheelPosition) {
 			console.log('case 1');
 			turnsRight = moveToIndex - theWheelObject.currentWheelPosition;
