@@ -1,3 +1,6 @@
+body {
+	margin:0;
+}
 body.mainPage, body.secondPage {
 	overflow:hidden;
 }
