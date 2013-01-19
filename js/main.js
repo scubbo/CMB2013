@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	makeFragments(22);
+	//makeFragments(22);
 	var pageWidth = $(window).width();
 	var pageHeight = $(window).height();
 
