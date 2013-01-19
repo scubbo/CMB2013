@@ -11,13 +11,12 @@ $(document).ready(function() {
 	});
 
 	$('#wheelViewport').height(pageHeight).width(pageWidth);
-	$('#wheel').height(2*pageHeight);
+	var wheelRadius = 4*pageHeight;
+	$('#wheel').height(2*wheelRadius);
 	$('.wheelContent').each(function(index, elem) {
 		var contentWidth = 800; //Might need to change this
-		console.log('new');
-		$(elem).css({'left':((pageWidth - contentWidth)/2.0).toString() + 'px', 'top':pageHeight.toString() + 'px'})
-		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', 'transform-origin':'center top'});
-		//$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + pageHeight.toString() + 'px)'});
+		$(elem).css({'left':((pageWidth - contentWidth)/2.0).toString() + 'px', 'top':wheelRadius.toString() + 'px'})
+		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', 'transform-origin':'center top'});
 	});
 
 	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'));
