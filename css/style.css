@@ -12,7 +12,7 @@ body.mainPage, body.secondPage {
 	position:absolute;
 	display:none;
 }
-.mainPage #nextPic {
+.mainPage #nextPicContainer {
 	position:absolute;
 	display:none;
 }

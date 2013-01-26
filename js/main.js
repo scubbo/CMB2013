@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
 	var indent = (pageWidth - picWidth) / 2.0;
-	$('#introPic, #nextPic').css('width', picWidth).css('height', picWidth).css('left', indent);
+	$('#introPic, #nextPicContainer').css('width', picWidth).css('height', picWidth).css('left', indent);
 
 	var loadingIndent = (pageWidth - 220) / 2.0;
 	var loadingIndentTop = (pageHeight - 19) / 2.0;
@@ -18,7 +18,7 @@ $(document).ready(function() {
 	$('#nextPic').load(function() {
 		$('#introPic').click(function() {
 			$('body').animate({backgroundColor: '#000000'}, 500);
-			$('#nextPic').fadeIn(500, function() {
+			$('#nextPicContainer').fadeIn(500, function() {
 				$('#introPic').hide();
 				/*setTimeout(function() {
 					$('.fragment').show();
@@ -34,7 +34,7 @@ $(document).ready(function() {
 function makeTitles() {
 	var titles = ['acts', 'contacts', 'gallery', 'tickets', 'vip', 'workers']
 	for (i=0;i<titles.length;i++) {
-		$('body').append('<img src="img/titles/' + titles[i] + '.png" class="title" id="title' + i.toString() + '" />');
+		$('#nextPicContainer').append('<img src="img/titles/' + titles[i] + '.png" class="title" id="title' + i.toString() + '" />');
 	}
 }
 
