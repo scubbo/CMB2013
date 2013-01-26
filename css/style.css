@@ -37,6 +37,24 @@ body.mainPage, body.secondPage {
 	left:28%;
 	width:43.1%;
 }
+.mainPage .title#title2 {
+	top:27.48%;
+	left:-0.78%;
+	width:38.5%;
+	-webkit-transform:rotate(-60deg);
+	-moz-transform:rotate(-60deg);
+	-o-transform:rotate(-60deg);
+	transform:rotate(-60deg);
+}
+.mainPage .title#title3 {
+	top:29%;
+	left:64.9;
+	width:33%;
+	-webkit-transform:rotate(60deg);
+	-moz-transform:rotate(60deg);
+	-o-transform:rotate(60deg);
+	transform:rotate(60deg);
+}
 .mainPage .title#title4 {
 	top:65.3%;
 	left:5.9%;
