@@ -16,6 +16,9 @@ body.mainPage, body.secondPage {
 	position:absolute;
 	display:none;
 }
+.mainPage .title {
+	position:absolute;
+}
 .fragment {
 	position:absolute;
 	/*display:none;*/
