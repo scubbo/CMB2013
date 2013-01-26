@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	makeFragments(1304);
+	//makeFragments(1304);
 	var pageWidth = $(window).width();
 	var pageHeight = $(window).height();
 
@@ -27,7 +27,16 @@ $(document).ready(function() {
 			});
 		});
 	});
+
+	makeTitles();
 });
+
+function makeTitles() {
+	var titles = ['acts', 'contacts', 'gallery', 'tickets', 'vip', 'workers']
+	for (i=0;i<titles.length;i++) {
+		$('body').append('<img src="img/titles/' + titles[i] + '.png' class="title" id="title' + i.toString() + '" />');
+	}
+}
 
 function makeFragments(number) {
 	console.log('making fragments');
