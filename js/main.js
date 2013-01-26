@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	//makeFragments(22);
+	makeFragments(1304);
 	var pageWidth = $(window).width();
 	var pageHeight = $(window).height();
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
 function makeFragments(number) {
 	console.log('making fragments');
 	for (i=0;i<number;i++) {
-		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="fragment" id="fragment' + i.toString() + '" />');
+		$('body').append('<img src="img/samples/' + (i+1).toString() + '.png" class="fragment" id="fragment' + i.toString() + '" />');
 	}
 	$('.fragment').each(function(index, elem) {
 		$(elem).attr('data-scatter-target', makeScatterTarget(elem));
@@ -50,10 +50,10 @@ function makeFragments(number) {
 			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
 			theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
 		});
-		var left = fragmentPositions[index]['x'];
-		var top = fragmentPositions[index]['y'];
-		var rotate = fragmentPositions[index]['rot'];
-		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
+		//var left = fragmentPositions[index]['x'];
+		//var top = fragmentPositions[index]['y'];
+		//var rotate = fragmentPositions[index]['rot'];
+		//theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
 	});
 }
 
