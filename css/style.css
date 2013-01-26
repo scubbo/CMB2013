@@ -16,7 +16,7 @@ body.mainPage, body.secondPage {
 	position:absolute;
 	display:none;
 }
-.mainPage #nextPicContainer {
+.mainPage #nextPic {
 	width:100%;
 }
 .mainPage .title {
