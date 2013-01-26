@@ -34,7 +34,7 @@ $(document).ready(function() {
 function makeTitles() {
 	var titles = ['acts', 'contacts', 'gallery', 'tickets', 'vip', 'workers']
 	for (i=0;i<titles.length;i++) {
-		$('body').append('<img src="img/titles/' + titles[i] + '.png' class="title" id="title' + i.toString() + '" />');
+		$('body').append('<img src="img/titles/' + titles[i] + '.png" class="title" id="title' + i.toString() + '" />');
 	}
 }
 
