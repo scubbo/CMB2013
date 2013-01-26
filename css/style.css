@@ -18,6 +18,11 @@ body.mainPage, body.secondPage {
 }
 .mainPage .title {
 	position:absolute;
+	display:none;
+}
+.mainPage .title#title5 {
+	left:44%
+	width:10.5%
 }
 .fragment {
 	position:absolute;
