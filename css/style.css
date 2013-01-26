@@ -21,8 +21,10 @@ body.mainPage, body.secondPage {
 	display:none;
 }
 .mainPage .title#title5 {
-	left:44%
-	width:10.5%
+	top:10%;
+	left:39%;
+	width:21.1%;
+	display:inline-block;
 }
 .fragment {
 	position:absolute;
