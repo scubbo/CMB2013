@@ -23,19 +23,33 @@ body.mainPage, body.secondPage {
 	position:absolute;
 	display:none;
 }
+.mainPage .title#title0 {
+	top:66.78%;
+	left:70.04%;
+	width:23.8%;
+	-webkit-transform:rotate(-60deg);
+	-moz-transform:rotate(-60deg);
+	-o-transform:rotate(-60deg);
+	transform:rotate(60deg);
+}
+.mainPage .title#title1 {
+	top:84.6%;
+	left:28%;
+	width:43.1%;
+}
 .mainPage .title#title4 {
-	top:61.2%;
-	left:27.4%;
-	width:11.2%;
+	top:65.3%;
+	left:5.9%;
+	width:22.5%;
 	-webkit-transform: rotate(60deg);
 	-moz-transform: rotate(60deg);
 	-o-transform: rotate(60deg);
 	transform: rotate(60deg);
 }
 .mainPage .title#title5 {
-	top:10%;
-	left:39%;
-	width:21.1%;
+	top:10.8%;
+	left:28,5%;
+	width:41.4%;
 }
 .fragment {
 	position:absolute;
