@@ -20,11 +20,19 @@ body.mainPage, body.secondPage {
 	position:absolute;
 	display:none;
 }
+.mainPage .title#title4 {
+	top:61.2%;
+	left:27.4%;
+	width:11.2%;
+	-webkit-transform:(60deg);
+	-moz-transform:(60deg);
+	-o-transform:(60deg);
+	transform(60deg);
+}
 .mainPage .title#title5 {
 	top:10%;
 	left:39%;
 	width:21.1%;
-	display:inline-block;
 }
 .fragment {
 	position:absolute;
