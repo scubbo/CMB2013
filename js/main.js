@@ -59,7 +59,7 @@ function makeLinks() {
 
 function firstTransition() {
 	$('body').animate({backgroundColor: '#000000'}, 500);
-	$('#nextPicContainer').fadeIn(500, function() {
+	$('#nextPicContainer').fadeIn(2500, function() {
 		$('#introPic').hide();
 		setTimeout(function() {
 			$('#nextPic').fadeOut(2000, function() {
@@ -101,7 +101,7 @@ function makeBCFragments(number) {
 				theFragment.css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
 				theFragment.css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
 				theFragment.css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
-			}, 100);
+			}, 300);
 		});
 		var left = fragmentPositions[fragIndex]['x'];
 		var top = fragmentPositions[fragIndex]['y'];

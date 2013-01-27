@@ -89,10 +89,10 @@ body.mainPage, body.secondPage {
 }
 .BCFragment {
 	position:absolute;
-	-webkit-transition: -webkit-transform 300ms ease-in, opacity 300ms ease-in;
-	-moz-transition: -moz-transform 300ms ease-in, opacity 300ms ease-in;
-	-o-transition: -o-transform 300ms ease-in, opacity 300ms ease-in;
-	transition: transform 300ms ease-in, opacity 300ms ease-in;
+	-webkit-transition: -webkit-transform 300ms ease-in-out, opacity 300ms ease-in;
+	-moz-transition: -moz-transform 300ms ease-in-out, opacity 300ms ease-in;
+	-o-transition: -o-transform 300ms ease-in-out, opacity 300ms ease-in;
+	transition: transform 300ms ease-in-out, opacity 300ms ease-in;
 }
 .fragment {
 	position:absolute;
