@@ -60,6 +60,8 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	} else {
 		this.currentAngle = this.currentWheelPosition > this.half ? parseFloat(theWheelObject.totalObjects - this.currentWheelPosition) * 360 / theWheelObject.totalObjects : - (parseFloat(this.currentWheelPosition) * 360 / theWheelObject.totalObjects);
 	}
+	this.startAngle = this.currentAngle;
+
 	this.targetObject.children().each(function(index, elem) {
 		if ($(elem).attr('data-wheel-position') == theWheelObject.currentWheelPosition.toString()) {
 			$(elem).css('opacity', '1');
@@ -91,7 +93,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			console.log('case 1');
 			console.log(turnsRight);
 			console.log(parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
-			targetAngle = theWheelObject.currentAngle - (parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
+			targetAngle = theWheelObject.currentAngle - (parseFloat(turnsRight * 360) / theWheelObject.totalObjects) - theWheelObject.startAngle;
 			rotateTo(indexObject, targetAngle);
 			rotateTo(targetObject, targetAngle);
 		} else {
@@ -102,7 +104,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			console.log(turnsLeft * 360);
 			console.log(parseFloat(turnsLeft * 360));
 			console.log(parseFloat(turnsLeft * 360) / theWheelObject.totalObjects);
-			targetAngle = theWheelObject.currentAngle + (parseFloat(turnsLeft * 360) / theWheelObject.totalObjects);
+			targetAngle = theWheelObject.currentAngle + (parseFloat(turnsLeft * 360) / theWheelObject.totalObjects) - theWheelObject.startAngle;
 			rotateTo(indexObject, targetAngle);
 			rotateTo(targetObject, targetAngle);
 		}
