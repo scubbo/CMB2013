@@ -61,17 +61,19 @@ function firstTransition() {
 	$('#nextPicContainer').fadeIn(500, function() {
 		$('#introPic').hide();
 		setTimeout(function() {
-			$('#mainTitle').css({'-webkit-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-			$('#mainTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-			$('#mainTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-			$('#mainTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-			setTimeout(function() {
-				$('#secondaryTitle').css({'-webkit-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-				$('#secondaryTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-				$('#secondaryTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-				$('#secondaryTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-			}, 1000);
-		}, 1000);
+			$('#nextPic').fadeOut(2000, function() {
+				$('#mainTitle').css({'-webkit-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+				$('#mainTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+				$('#mainTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+				$('#mainTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+				setTimeout(function() {
+					$('#secondaryTitle').css({'-webkit-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+					$('#secondaryTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+					$('#secondaryTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+					$('#secondaryTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+				}, 1000);
+			});
+		}, 200);
 	});
 }
 
