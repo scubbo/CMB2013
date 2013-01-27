@@ -16,10 +16,10 @@ $(document).ready(function() {
 	var startPosition; 
 	if (typeof queryString !== 'undefined' || !(queryString.equals(""))) {
 		console.log('case1');
-		startPosition = 0;	
+		startPosition = positionLookup[queryString];
 	} else {
 		console.log('case2');
-		startPosition = positionLookup[queryString];
+		startPosition = 0;
 	}
 
 	console.log(startPosition);
