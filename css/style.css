@@ -15,6 +15,7 @@ body.mainPage, body.secondPage {
 .mainPage #nextPicContainer {
 	position:absolute;
 	display:none;
+	height:100%;
 }
 .mainPage #nextPic {
 	width:100%;
