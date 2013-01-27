@@ -14,7 +14,7 @@ $(document).ready(function() {
 	console.log('queryString is ');
 	console.log(queryString);
 	var startPosition; 
-	if (typeof queryString !== 'undefined' || !(queryString.equals(""))) {
+	if (typeof queryString !== 'undefined' || queryString != "") {
 		console.log('case1');
 		startPosition = positionLookup[queryString];
 	} else {
