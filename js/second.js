@@ -2,23 +2,8 @@ $(document).ready(function() {
 	var pageWidth = $(window).width();
 	var pageHeight = $(window).height();
 
-	$('#indexWheelContainer').css('top', pageHeight - 400).css('left', 4);
-	$('.indexWheelLink').each(function(index, elem) {
-		//var theWidth = $(elem).width();
-		//This is how it should really be done...I feel so dirty...
-		var theWidth = imageWidths[index];
-		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'left':(200-(theWidth/2.0)).toString() + 'px'});
-	});
 
-	$('#wheelViewport').height(pageHeight).width(pageWidth);
-	var wheelRadius = 2*pageHeight;
-	$('#wheel').height(2*wheelRadius);
-	$('.wheelContent').each(function(index, elem) {
-		var contentWidth = 800; //Might need to change this
-		$(elem).css({'left':((pageWidth - contentWidth)/2.0).toString() + 'px', 'top':wheelRadius.toString() + 'px'})
-		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', 'transform-origin':'center top'});
-	});
-
+	var startPosition = typeof queryString !== 'undefined' ? positionLookup[queryString] : 0;
 	var queryString = getParameterByName("section");
 	positionLookup = {
 		"workers":0, 
@@ -28,8 +13,26 @@ $(document).ready(function() {
 		"vip":4, 
 		"gallery":5
 	};
-	var startPosition = typeof queryString !== 'undefined' ? positionLookup[queryString] : 0;
-	console.log(startPosition);
+
+	$('#indexWheelContainer').css('top', pageHeight - 400).css('left', 4);
+	$('.indexWheelLink').each(function(index, elem) {
+		//var theWidth = $(elem).width();
+		//This is how it should really be done...I feel so dirty...
+		var theWidth = imageWidths[index];
+		index = index+startPosition;
+		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'left':(200-(theWidth/2.0)).toString() + 'px'});
+	});
+
+	$('#wheelViewport').height(pageHeight).width(pageWidth);
+	var wheelRadius = 2*pageHeight;
+	$('#wheel').height(2*wheelRadius);
+	$('.wheelContent').each(function(index, elem) {
+		var contentWidth = 800; //Might need to change this
+		$(elem).css({'left':((pageWidth - contentWidth)/2.0).toString() + 'px', 'top':wheelRadius.toString() + 'px'})
+		index = index+startPosition;
+		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', 'transform-origin':'center top'});
+	});
+
 	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'), startPosition);
 });
 
@@ -58,10 +61,8 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		var moveToIndex = parseInt($(this).attr('data-wheel-position'));
 		var turnsRight;
 		if (moveToIndex > theWheelObject.currentWheelPosition) {
-			console.log('case a1');
 			turnsRight = moveToIndex - theWheelObject.currentWheelPosition;
 		} else {
-			console.log('case a2');
 			console.log(theWheelObject.totalObjects);
 			console.log(theWheelObject.currentWheelPosition);
 			console.log(moveToIndex);
