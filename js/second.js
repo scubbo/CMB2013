@@ -68,7 +68,9 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	});
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
+		console.log('Current Wheel Position is ' + theWheelObject.currentWheelPosition.toString());
 		var moveToIndex = parseInt($(this).attr('data-wheel-position'));
+		console.log('Move To Index is ' + moveToIndex.toString());
 		var turnsRight;
 		if (moveToIndex > theWheelObject.currentWheelPosition) {
 			turnsRight = moveToIndex - theWheelObject.currentWheelPosition;
