@@ -11,7 +11,9 @@ $(document).ready(function() {
 		"gallery":5
 	};
 	var queryString = getParameterByName("section");
-	var startPosition 
+	console.log('queryString is ');
+	console.log(queryString);
+	var startPosition; 
 	if (typeof queryString !== 'undefined' || queryString.equals("")) {
 		 startPosition = positionLookup[queryString];
 	} else {
