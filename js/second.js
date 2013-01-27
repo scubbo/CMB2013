@@ -15,8 +15,10 @@ $(document).ready(function() {
 	console.log(queryString);
 	var startPosition; 
 	if (typeof queryString !== 'undefined' || queryString.equals("")) {
+		console.log('case1');
 		startPosition = 0;	
 	} else {
+		console.log('case2');
 		startPosition = positionLookup[queryString];
 	}
 
