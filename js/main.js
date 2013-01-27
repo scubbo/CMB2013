@@ -82,17 +82,16 @@ function makeBCFragments(number) {
 	for (i=0;i<number;i++) {
 		$('#nextPicContainer').append('<img src="img/fragments/BC' + (i+1).toString() + '.png" class="BCfragment" id="fragment' + i.toString() + '" />');
 	}
-	$('.fragment').each(function(index, elem) {
-		$(elem).attr('data-scatter-target', makeScatterTarget(elem));
-	});
-	$('.fragment').each(function(index, elem) {
+	$('.BCfragment').each(function(index, elem) {
 		var theFragment = $(elem);
+		var fragIndex = $(elem).attr('id').replace('fragment', '');
 		theFragment.mouseover(function() {
-			scatterX = theFragment.attr('data-scatter-target').split(',')[0];
-			scatterY = theFragment.attr('data-scatter-target').split(',')[1];
-			rotateX = theFragment.attr('data-scatter-target').split(',')[2];
-			rotateY = theFragment.attr('data-scatter-target').split(',')[3];
-			rotate = theFragment.attr('data-scatter-target').split(',')[4];
+			scatter = makeScatterTarget();
+			scatterX = scatter.split(',')[0];
+			scatterY = scatter.split(',')[1];
+			rotateX = scatter.split(',')[2];
+			rotateY = scatter.split(',')[3];
+			rotate = scatter.split(',')[4];
 			theFragment.css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
 			theFragment.css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
 			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
@@ -104,10 +103,10 @@ function makeBCFragments(number) {
 				theFragment.css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
 			}, 500);
 		});
-		var left = fragmentPositions[index]['x'];
-		var top = fragmentPositions[index]['y'];
-		var rotate = fragmentPositions[index]['rot'];
-		var width = fragmentPostions[index]['width'];
+		var left = fragmentPositions[fragIndex]['x'];
+		var top = fragmentPositions[fragIndex]['y'];
+		var rotate = fragmentPositions[fragIndex]['rot'];
+		var width = fragmentPostions[fragIndex]['width'];
 		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
 	});
 }
@@ -131,27 +130,7 @@ function maybeNegative() {
 }
 
 var fragmentPositions = [
-	{x:50, y:50, rot:10},
-	{x:35, y:26, rot:30},
-	{x:22, y:74, rot:200},
-	{x:14, y:10, rot:19},
-	{x:35, y:10, rot:64},
-	{x:39, y:26, rot:72},
-	{x:18, y:13, rot:18},
-	{x:26, y:82, rot:129},
-	{x:16, y:13, rot:29},
-	{x:19, y:44, rot:20},
-	{x:62, y:49, rot:95},
-	{x:73, y:32, rot:73},
-	{x:14, y:5, rot:26},
-	{x:16, y:86, rot:19},
-	{x:64, y:32, rot:93},
-	{x:32, y:12, rot:184},
-	{x:25, y:25, rot:153},
-	{x:85, y:76, rot:104},
-	{x:50, y:32, rot:286},
-	{x:4, y:5, rot:285},
-	{x:8, y:72, rot:300},
-	{x:63, y:3, rot:19}
+	{x:33, y:27, width:4.2},
+	{x:28.5, y:64.2, width:2.8}, 
 ];
 
