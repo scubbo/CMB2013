@@ -2,9 +2,6 @@ $(document).ready(function() {
 	var pageWidth = $(window).width();
 	var pageHeight = $(window).height();
 
-
-	var startPosition = typeof queryString !== 'undefined' ? positionLookup[queryString] : 0;
-	var queryString = getParameterByName("section");
 	positionLookup = {
 		"workers":0, 
 		"tickets":1, 
@@ -13,6 +10,10 @@ $(document).ready(function() {
 		"vip":4, 
 		"gallery":5
 	};
+	var queryString = getParameterByName("section");
+	var startPosition = typeof queryString !== 'undefined' ? positionLookup[queryString] : 0;
+
+	console.log(startPosition);
 
 	$('#indexWheelContainer').css('top', pageHeight - 400).css('left', 4);
 	$('.indexWheelLink').each(function(index, elem) {
