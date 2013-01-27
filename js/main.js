@@ -23,6 +23,7 @@ $(document).ready(function() {
 
 	positionTitles();
 	makeLinks();
+	makeBCFragments(3);
 
 });
 
@@ -73,14 +74,13 @@ function firstTransition() {
 					$('#secondaryTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
 				}, 1000);
 			});
-		}, 200);
+		}, 2000);
 	});
 }
 
-function makeFragments(number) {
-	console.log('making fragments');
+function makeBCFragments(number) {
 	for (i=0;i<number;i++) {
-		$('body').append('<img src="img/samples/' + (i+1).toString() + '.png" class="fragment" id="fragment' + i.toString() + '" />');
+		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="BCfragment" id="fragment' + i.toString() + '" />');
 	}
 	$('.fragment').each(function(index, elem) {
 		$(elem).attr('data-scatter-target', makeScatterTarget(elem));
@@ -93,15 +93,21 @@ function makeFragments(number) {
 			rotateX = theFragment.attr('data-scatter-target').split(',')[2];
 			rotateY = theFragment.attr('data-scatter-target').split(',')[3];
 			rotate = theFragment.attr('data-scatter-target').split(',')[4];
-			theFragment.css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
-			theFragment.css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
-			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
-			theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
+			theFragment.css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			theFragment.css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			setTimeout(function() {
+				theFragment.css({'-webkit-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
+				theFragment.css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
+				theFragment.css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
+				theFragment.css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
+			}, 500);
 		});
-		//var left = fragmentPositions[index]['x'];
-		//var top = fragmentPositions[index]['y'];
-		//var rotate = fragmentPositions[index]['rot'];
-		//theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
+		var left = fragmentPositions[index]['x'];
+		var top = fragmentPositions[index]['y'];
+		var rotate = fragmentPositions[index]['rot'];
+		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
 	});
 }
 
