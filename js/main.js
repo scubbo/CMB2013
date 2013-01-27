@@ -27,7 +27,26 @@ $(document).ready(function() {
 });
 
 function positionTitles() {
-	console.log('position titles now');
+	scatter = makeScatterTarget();
+	scatterX = scatter.split(',')[0];
+	scatterY = scatter.split(',')[1];
+	rotateX = scatter.split(',')[2];
+	rotateY = scatter.split(',')[3];
+	rotate = scatter.split(',')[4];
+	$('#mainTitle').css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
+	$('#mainTitle').css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
+	$('#mainTitle').css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
+	$('#mainTitle').css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
+	scatter = makeScatterTarget();
+	scatterX = scatter.split(',')[0];
+	scatterY = scatter.split(',')[1];
+	rotateX = scatter.split(',')[2];
+	rotateY = scatter.split(',')[3];
+	rotate = scatter.split(',')[4];
+	$('#secondaryTitle').css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
+	$('#secondaryTitle').css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
+	$('#secondaryTitle').css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
+	$('#secondaryTitle').css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)', 'opacity':0});
 }
 
 function makeLinks() {
@@ -41,10 +60,18 @@ function firstTransition() {
 	$('body').animate({backgroundColor: '#000000'}, 500);
 	$('#nextPicContainer').fadeIn(500, function() {
 		$('#introPic').hide();
-		/*setTimeout(function() {
-			$('.fragment').show();
-			$('#nextPic').hide();
-		}, 200);*/
+		setTimeout(function() {
+			$('#mainTitle').css({'-webkit-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+			$('#mainTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+			$('#mainTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+			$('#mainTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+			setTimeout(function() {
+				$('#secondaryTitle').css({'-webkit-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+				$('#secondaryTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+				$('#secondaryTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+				$('#secondaryTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+			}, 1000);
+		}, 1000);
 	});
 }
 
@@ -82,7 +109,7 @@ function makeFragmentWrapperDiv(longSide, shortSide, angle) {
 	return output;
 }
 
-function makeScatterTarget(elem) {
+function makeScatterTarget() {
 	return maybeNegative() + (300 + Math.random() * 200).toString() + ',' + maybeNegative() + (300 + Math.random() * 200).toString() + ',' + maybeNegative() + (Math.random() * 600).toString() + ',' + maybeNegative() + (Math.random() * 600).toString() + ',' + maybeNegative() + (Math.random() * 600).toString();
 }
 

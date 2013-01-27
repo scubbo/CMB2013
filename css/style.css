@@ -20,12 +20,17 @@ body.mainPage, body.secondPage {
 	width:100%;
 }
 .mainPage .title {
-	display:none;
+	opacity:0;
 	position:absolute;
 	-webkit-transition: -webkit-transform 600ms ease-in-out, opacity 600ms ease-in;
 	-moz-transition: -moz-transform 600ms ease-in-out, opacity 600ms ease-in;
 	-o-transition: -o-transform 600ms ease-in-out, opacity 600ms ease-in;
 	transition: transform 600ms ease-in-out, opacity 600ms ease-in;
+}
+.mainPage #mainTitle {
+	top:65%;
+	left:36%;
+	width:32%;
 }
 .mainPage .link {
 	position:absolute;
