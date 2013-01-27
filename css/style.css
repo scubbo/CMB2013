@@ -87,6 +87,13 @@ body.mainPage, body.secondPage {
 	left:28.5%;
 	width:41.4%;
 }
+.BCFragment {
+	position:absolute;
+	-webkit-transition: -webkit-transform 300ms ease-in, opacity 300ms ease-in;
+	-moz-transition: -moz-transform 300ms ease-in, opacity 300ms ease-in;
+	-o-transition: -o-transform 300ms ease-in, opacity 300ms ease-in;
+	transition: transform 300ms ease-in, opacity 300ms ease-in;
+}
 .fragment {
 	position:absolute;
 	/*display:none;*/
