@@ -55,12 +55,14 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	this.currentWheelPosition = this.startWheelPosition;
 	this.totalObjects = this.indexObject.children('div.indexWheelLink').length;
 	this.half = this.totalObjects/2;
-	if (this.currentWheelPosition == 0) {
-		this.currentAngle = 0
-	} else {
-		this.currentAngle = this.currentWheelPosition > this.half ? parseFloat(theWheelObject.totalObjects - this.currentWheelPosition) * 360 / theWheelObject.totalObjects : - (parseFloat(this.currentWheelPosition) * 360 / theWheelObject.totalObjects);
-	}
-	this.startAngle = this.currentAngle;
+	
+	this.currentAngle = 0;
+	//if (this.currentWheelPosition == 0) {
+	//	this.currentAngle = 0
+	//} else {
+	//	this.currentAngle = this.currentWheelPosition > this.half ? parseFloat(theWheelObject.totalObjects - this.currentWheelPosition) * 360 / theWheelObject.totalObjects : - (parseFloat(this.currentWheelPosition) * 360 / theWheelObject.totalObjects);
+	//}
+	//this.startAngle = this.currentAngle;
 
 	this.targetObject.children().each(function(index, elem) {
 		if ($(elem).attr('data-wheel-position') == theWheelObject.currentWheelPosition.toString()) {
@@ -95,7 +97,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			console.log(parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
 			console.log('currentAngle is ' + theWheelObject.currentAngle.toString());
 			console.log('start angle is ' + theWheelObject.startAngle.toString());
-			targetAngle = theWheelObject.currentAngle - (parseFloat(turnsRight * 360) / theWheelObject.totalObjects) - theWheelObject.startAngle;
+			targetAngle = theWheelObject.currentAngle - (parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
 			rotateTo(indexObject, targetAngle);
 			rotateTo(targetObject, targetAngle);
 		} else {
@@ -108,7 +110,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			console.log(parseFloat(turnsLeft * 360) / theWheelObject.totalObjects);
 			console.log('currentAngle is ' + theWheelObject.currentAngle.toString());
 			console.log('start angle is ' + theWheelObject.startAngle.toString());
-			targetAngle = theWheelObject.currentAngle + (parseFloat(turnsLeft * 360) / theWheelObject.totalObjects) - theWheelObject.startAngle;
+			targetAngle = theWheelObject.currentAngle + (parseFloat(turnsLeft * 360) / theWheelObject.totalObjects);
 			rotateTo(indexObject, targetAngle);
 			rotateTo(targetObject, targetAngle);
 		}
