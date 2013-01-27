@@ -15,9 +15,9 @@ $(document).ready(function() {
 	console.log(queryString);
 	var startPosition; 
 	if (typeof queryString !== 'undefined' || queryString.equals("")) {
-		 startPosition = positionLookup[queryString];
+		startPosition = 0;	
 	} else {
-		startPosition = 0;
+		startPosition = positionLookup[queryString];
 	}
 
 	console.log(startPosition);
