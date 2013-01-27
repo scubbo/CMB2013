@@ -17,25 +17,35 @@ $(document).ready(function() {
 	});
 	$('#nextPic').load(function() {
 		$('#introPic').click(function() {
-			$('body').animate({backgroundColor: '#000000'}, 500);
-			$('#nextPicContainer').fadeIn(500, function() {
-				$('#introPic').hide();
-				/*setTimeout(function() {
-					$('.fragment').show();
-					$('#nextPic').hide();
-				}, 200);*/
-			});
+			firstTransition();
 		});
 	});
 
-	makeTitles();
+	positionTitles();
+	makeLinks();
+
 });
 
-function makeTitles() {
-	var titles = ['acts', 'contacts', 'gallery', 'tickets', 'vip', 'workers']
-	for (i=0;i<titles.length;i++) {
-		$('#nextPicContainer').append('<img src="img/titles/' + titles[i] + '.png" class="title" id="title' + i.toString() + '" />');
+function positionTitles() {
+	console.log('position titles now');
+}
+
+function makeLinks() {
+	var links = ['acts', 'contacts', 'gallery', 'tickets', 'vip', 'workers']
+	for (i=0;i<links.length;i++) {
+		$('#nextPicContainer').append('<img src="img/links/' + links[i] + '.png" class="link" id="link' + i.toString() + '" />');
 	}
+}
+
+function firstTransition() {
+	$('body').animate({backgroundColor: '#000000'}, 500);
+	$('#nextPicContainer').fadeIn(500, function() {
+		$('#introPic').hide();
+		/*setTimeout(function() {
+			$('.fragment').show();
+			$('#nextPic').hide();
+		}, 200);*/
+	});
 }
 
 function makeFragments(number) {

@@ -20,10 +20,18 @@ body.mainPage, body.secondPage {
 	width:100%;
 }
 .mainPage .title {
+	display:none;
+	position:absolute;
+	-webkit-transition: -webkit-transform 600ms ease-in-out, opacity 600ms ease-in;
+	-moz-transition: -moz-transform 600ms ease-in-out, opacity 600ms ease-in;
+	-o-transition: -o-transform 600ms ease-in-out, opacity 600ms ease-in;
+	transition: transform 600ms ease-in-out, opacity 600ms ease-in;
+}
+.mainPage .link {
 	position:absolute;
 	display:none;
 }
-.mainPage .title#title0 {
+.mainPage .link#link0 {
 	top:66.78%;
 	left:70.04%;
 	width:23.8%;
@@ -32,12 +40,12 @@ body.mainPage, body.secondPage {
 	-o-transform:rotate(-60deg);
 	transform:rotate(60deg);
 }
-.mainPage .title#title1 {
+.mainPage .link#link1 {
 	top:84.6%;
 	left:28%;
 	width:43.1%;
 }
-.mainPage .title#title2 {
+.mainPage .link#link2 {
 	top:27.48%;
 	left:-0.78%;
 	width:38.5%;
@@ -46,7 +54,7 @@ body.mainPage, body.secondPage {
 	-o-transform:rotate(-60deg);
 	transform:rotate(-60deg);
 }
-.mainPage .title#title3 {
+.mainPage .link#link3 {
 	top:29%;
 	left:64.9%;
 	width:33%;
@@ -55,7 +63,7 @@ body.mainPage, body.secondPage {
 	-o-transform:rotate(60deg);
 	transform:rotate(60deg);
 }
-.mainPage .title#title4 {
+.mainPage .link#link4 {
 	top:65.3%;
 	left:5.9%;
 	width:22.5%;
@@ -64,7 +72,7 @@ body.mainPage, body.secondPage {
 	-o-transform: rotate(60deg);
 	transform: rotate(60deg);
 }
-.mainPage .title#title5 {
+.mainPage .link#link5 {
 	top:10.8%;
 	left:28.5%;
 	width:41.4%;
