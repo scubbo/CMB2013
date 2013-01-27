@@ -146,4 +146,9 @@ body.mainPage, body.secondPage {
 	-o-transition: -o-transform 600ms ease-in-out, opacity 600ms ease-in;
 	transition: transform 600ms ease-in-out, opacity 600ms ease-in;
 }
-
+.secondPage .sectionTitle {
+	text-align:center;
+}
+.secondPage .sectionTitleImage {
+	width:80%;
+}
