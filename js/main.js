@@ -105,9 +105,9 @@ function makeBCFragments(number) {
 		});
 		var left = fragmentPositions[fragIndex]['x'];
 		var top = fragmentPositions[fragIndex]['y'];
-		var rotate = fragmentPositions[fragIndex]['rot'];
 		var width = fragmentPositions[fragIndex]['width'];
-		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
+		//theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
+		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%'});
 	});
 }
 
