@@ -20,7 +20,7 @@ $(document).ready(function() {
 		//var theWidth = $(elem).width();
 		//This is how it should really be done...I feel so dirty...
 		var theWidth = imageWidths[index];
-		index = index+startPosition;
+		index = index-startPosition;
 		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'left':(200-(theWidth/2.0)).toString() + 'px'});
 	});
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
 	$('.wheelContent').each(function(index, elem) {
 		var contentWidth = 800; //Might need to change this
 		$(elem).css({'left':((pageWidth - contentWidth)/2.0).toString() + 'px', 'top':wheelRadius.toString() + 'px'})
-		index = index+startPosition;
+		index = index-startPosition;
 		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', 'transform-origin':'center top'});
 	});
 
