@@ -19,7 +19,18 @@ $(document).ready(function() {
 		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', 'transform-origin':'center top'});
 	});
 
-	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'));
+	var queryString = getParameterByName("section");
+	positionLookup = {
+		"workers":0, 
+		"tickets":1, 
+		"acts":2, 
+		"contacts":3, 
+		"vip":4, 
+		"gallery":5
+	};
+	var startPosition = typeof queryString !== 'undefined' ? positionLookup[queryString] : 0;
+	console.log(startPosition);
+	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'), startPosition);
 });
 
 function wheelObject(indexObject, targetObject, startWheelPosition) {
@@ -180,4 +191,15 @@ var range = function(start, end, step) {
 
     return range;
 
+}
+
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.search);
+  if(results == null)
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
