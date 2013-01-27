@@ -94,6 +94,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			console.log(turnsRight);
 			console.log(parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
 			console.log('currentAngle is ' + theWheelObject.currentAngle.toString());
+			console.log('start angle is ' + theWheelObject.startAngle.toString());
 			targetAngle = theWheelObject.currentAngle - (parseFloat(turnsRight * 360) / theWheelObject.totalObjects) - theWheelObject.startAngle;
 			rotateTo(indexObject, targetAngle);
 			rotateTo(targetObject, targetAngle);
@@ -106,6 +107,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			console.log(parseFloat(turnsLeft * 360));
 			console.log(parseFloat(turnsLeft * 360) / theWheelObject.totalObjects);
 			console.log('currentAngle is ' + theWheelObject.currentAngle.toString());
+			console.log('start angle is ' + theWheelObject.startAngle.toString());
 			targetAngle = theWheelObject.currentAngle + (parseFloat(turnsLeft * 360) / theWheelObject.totalObjects) - theWheelObject.startAngle;
 			rotateTo(indexObject, targetAngle);
 			rotateTo(targetObject, targetAngle);
