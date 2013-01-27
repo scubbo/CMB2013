@@ -148,6 +148,7 @@ body.mainPage, body.secondPage {
 }
 .secondPage .sectionTitle {
 	text-align:center;
+	margin-top:30px;
 }
 .secondPage .sectionTitleImage {
 	width:80%;
