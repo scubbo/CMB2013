@@ -5,7 +5,8 @@ $(document).ready(function() {
 
 	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
 	var indent = (pageWidth - picWidth) / 2.0;
-	$('#introPic, #nextPicContainer').css('width', picWidth).css('height', picWidth).css('left', indent);
+	//$('#introPic, #nextPicContainer').css('width', picWidth).css('height', picWidth).css('left', indent);
+	$('#introPic, #nextPicContainer').css('width', picWidth).css('left', indent);
 
 	var loadingIndent = (pageWidth - 220) / 2.0;
 	var loadingIndentTop = (pageHeight - 19) / 2.0;
