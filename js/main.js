@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 	positionTitles();
 	makeLinks();
-	makeBCFragments(3);
+	makeBCFragments(2);
 
 });
 
