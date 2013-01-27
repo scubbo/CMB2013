@@ -56,6 +56,9 @@ function makeLinks() {
 	for (i=0;i<links.length;i++) {
 		$('#nextPicContainer').append('<img src="img/links/' + links[i] + '.png" class="link" id="link' + i.toString() + '" />');
 	}
+	$('.link').click(function() {
+		window.location.href = "/moreDetails/" + $(this).attr('src').replace('img/links/', '').replace('.png', '');
+	});	
 }
 
 function firstTransition() {
