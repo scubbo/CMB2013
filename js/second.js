@@ -69,6 +69,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
 		console.log('Current Wheel Position is ' + theWheelObject.currentWheelPosition.toString());
+		console.log('Current angle is ' + theWheelObject.currentAngle.toString());
 		var moveToIndex = parseInt($(this).attr('data-wheel-position'));
 		console.log('Move To Index is ' + moveToIndex.toString());
 		var turnsRight;
@@ -89,8 +90,6 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			//Move to the right
 			console.log('case 1');
 			console.log(turnsRight);
-			console.log(turnsRight * 360);
-			console.log(parseFloat(turnsRight * 360));
 			console.log(parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
 			targetAngle = theWheelObject.currentAngle - (parseFloat(turnsRight * 360) / theWheelObject.totalObjects);
 			rotateTo(indexObject, targetAngle);
