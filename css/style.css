@@ -40,7 +40,6 @@ body.mainPage, body.secondPage {
 }
 .mainPage .link {
 	position:absolute;
-	display:none;
 }
 .mainPage .link#link0 {
 	top:66.78%;
