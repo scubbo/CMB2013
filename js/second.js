@@ -43,7 +43,8 @@ $(document).ready(function() {
 		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-webkit-transform-origin':'center top', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-moz-transform-origin':'center top', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', '-o-transform-origin':'center top', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-' + wheelRadius.toString() + 'px)', 'transform-origin':'center top'});
 	});
 
-	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'), startPosition);
+	//var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'), startPosition);
+	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'));
 });
 
 function wheelObject(indexObject, targetObject, startWheelPosition) {
@@ -64,7 +65,6 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 			$(elem).css('opacity', '1');
 			console.log('making visible');
 		}
-		console.log('testing ' + $(elem).attr('data-wheel-position') + ' against ' + theWheelObject.currentWheelPosition.toString());
 	});
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
@@ -116,7 +116,8 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 		});
 		theWheelObject.currentWheelPosition = moveToIndex;
 		console.log('current WheelPosition is now ' + moveToIndex.toString());
-		theWheelObject.currentAngle = targetAngle
+		theWheelObject.currentAngle = targetAngle;
+		console.log('current angle is now ' + targetAngle.toString());
 	});
 
 }
