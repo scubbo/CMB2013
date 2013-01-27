@@ -136,7 +136,7 @@ function maybeNegative() {
 var fragmentPositions = [
 	{x:33, y:27, width:4.2},
 	{x:28.5, y:64.2, width:2.8}, 
-	{x:32.2, y:69.6, width:4.2}, 
-	{x:59, y:77.6, width:2.6}
+	{x:69.6, y:32.2, width:4.2}, 
+	{x:77.6, y:59, width:2.6}
 ];
 
