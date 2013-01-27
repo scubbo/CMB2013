@@ -80,7 +80,7 @@ function firstTransition() {
 
 function makeBCFragments(number) {
 	for (i=0;i<number;i++) {
-		$('body').append('<img src="img/fragments/' + (i+1).toString() + '.png" class="BCfragment" id="fragment' + i.toString() + '" />');
+		$('#nextPicContainer').append('<img src="img/fragments/BC' + (i+1).toString() + '.png" class="BCfragment" id="fragment' + i.toString() + '" />');
 	}
 	$('.fragment').each(function(index, elem) {
 		$(elem).attr('data-scatter-target', makeScatterTarget(elem));
@@ -107,6 +107,7 @@ function makeBCFragments(number) {
 		var left = fragmentPositions[index]['x'];
 		var top = fragmentPositions[index]['y'];
 		var rotate = fragmentPositions[index]['rot'];
+		var width = fragmentPostions[index]['width'];
 		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
 	});
 }
