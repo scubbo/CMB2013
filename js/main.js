@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 	positionTitles();
 	makeLinks();
-	makeBCFragments(6);
+	makeBCFragments(45);
 
 });
 
@@ -137,6 +137,8 @@ var fragmentPositions = [
 	{x:33, y:27, width:4.2},
 	{x:28.5, y:64.2, width:2.8}, 
 	{x:69.6, y:32.2, width:4.2}, 
-	{x:77.6, y:59, width:2.6}
+	{x:77.6, y:59, width:2.6}, 
+	{x:53, y:80.05, width:2.8}, 
+	{x:44, y:82.7, width:2.5}
 ];
 
