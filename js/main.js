@@ -89,8 +89,10 @@ function makeBCFragments(number) {
 	$('.BCfragment').each(function(index, elem) {
 		var theFragment = $(elem);
 		var fragIndex = $(elem).attr('id').replace('fragment', '');
+		scatter = makeScatterTarget();
+		$(elem).attr('data-nextscatter', scatter);
 		theFragment.mouseover(function() {
-			scatter = makeScatterTarget();
+			scatter = $(elem).attr('data-nextscatter');
 			scatterX = scatter.split(',')[0];
 			scatterY = scatter.split(',')[1];
 			rotateX = scatter.split(',')[2];
@@ -106,6 +108,7 @@ function makeBCFragments(number) {
 				theFragment.css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
 				theFragment.css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
 			}, 300);
+			$(elem).attr('data-nextscatter', makeScatterTarget());
 		});
 		var left = fragmentPositions[fragIndex]['x'];
 		var top = fragmentPositions[fragIndex]['y'];
