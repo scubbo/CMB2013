@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 	positionTitles();
 	makeLinks();
-	makeBCFragments(4);
+	makeBCFragments(6);
 
 });
 
