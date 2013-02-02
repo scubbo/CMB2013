@@ -8,23 +8,21 @@ $(document).ready(function() {
 	//$('#introPic, #nextPicContainer').css('width', picWidth).css('height', picWidth).css('left', indent);
 	$('#introPic, #nextPicContainer').css('width', picWidth).css('left', indent);
 
+	positionTitles();
+	makeLinks();
+	makeBCFragments(43);
+
 	var loadingIndent = (pageWidth - 220) / 2.0;
 	var loadingIndentTop = (pageHeight - 19) / 2.0;
 	$('#loadingIcon').css('left', loadingIndent).css('top', loadingIndentTop);
 
-	$('#introPic').load(function() {
+	$('#nextPic').load(function() {	
 		$('#loadingIcon').hide();
 		$('#introPic').fadeIn(1000);
-	});
-	$('#nextPic').load(function() {
 		$('#introPic').click(function() {
 			firstTransition();
 		});
 	});
-
-	positionTitles();
-	makeLinks();
-	makeBCFragments(45);
 
 });
 
@@ -151,13 +149,13 @@ var fragmentPositions = [
 	{x:68.4, y:77.3, width:2.7}, 
 	{x:68.5, y:69.5, width:2.6}, 
 	{x:74.5, y:66.8, width:2.4}, 
-	{x:77.6, y:59, width:2.7}, 
+	//{x:77.6, y:59, width:2.7}, 
 	{x:89.6, y:59, width:1.5}, 
 	{x:94.3, y:53.7, width:4}, 
 	{x:94, y:48.2, width:4.3}, 
 	{x:80.4, y:40.1, width:2.5}, 
 	{x:77.3, y:40, width:2.6}, 
-	{x:69.7, y:32.2, width:4.2}, 
+	//{x:69.7, y:32.2, width:4.2}, 
 	{x:56.3, y:21.9, width:3.8}, 
 	{x:49.9, y:24.3, width:2.5}, 
 	{x:49.7, y:28.8, width:1.4}, 
@@ -166,6 +164,21 @@ var fragmentPositions = [
 	{x:33, y:27, width:4.1}, 
 	{x:29.9, y:32.4, width:1.2}, 
 	{x:22.4, y:34.7, width:2.6}, 
-	{x:22.1, y:37.4, width:1.5}
+	{x:22.1, y:37.4, width:1.5}, 
+	{x:25.5, y:42.5, width:5.4}, 
+	{x:16.4, y:42.7, width:2.5}, 
+	{x:28.4, y:21.5, width:2.7}, 
+	{x:13.3, y:50.6, width:5.65}, 
+	{x:5.5, y:49.9, width:1}, 
+	{x:13.3, y:53.2, width:4.2}, 
+	{x:4.3, y:57, width:2.6}, 
+	{x:1.2, y:48, width:3.9}, 
+	{x:1.3, y:53.7, width:3.9}, 
+	{x:9.8, y:62.4, width:2.5}, 
+	{x:22.3, y:58.5, width:2.7}, 
+	{x:28.6, y:64.3, width:2.7}, 
+	{x:25.2, y:77.1, width:2.6}, 
+	{x:16.2, y:79.8, width:2.5}, 
+	{x:22, y:90.3, width:3.2}
 ];
 
