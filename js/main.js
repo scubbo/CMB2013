@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 	positionTitles();
 	makeLinks();
-	makeBCFragments(43);
+	makeBCFragments(42);
 
 	var loadingIndent = (pageWidth - 220) / 2.0;
 	var loadingIndentTop = (pageHeight - 19) / 2.0;
@@ -161,7 +161,7 @@ var fragmentPositions = [
 	{x:49.7, y:28.8, width:1.4}, 
 	{x:43.7, y:21.9, width:2.7}, 
 	{x:71.4, y:11.2, width:2.7}, 
-	{x:33, y:27, width:4.1}, 
+	//{x:33, y:27, width:4.1}, 
 	{x:29.9, y:32.4, width:1.2}, 
 	{x:22.4, y:34.7, width:2.6}, 
 	{x:22.1, y:37.4, width:1.5}, 
