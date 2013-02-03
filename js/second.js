@@ -73,7 +73,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	});
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
-		window.history.replaceState({id:1}, 'New Title', '/moreDetails/' + $(this).attr('id').replace('Link', '');
+		window.history.replaceState({id:1}, 'New Title', '/moreDetails/' + $(this).attr('id').replace('Link', ''));
 		console.log('Current Wheel Position is ' + theWheelObject.currentWheelPosition.toString());
 		console.log('Current angle is ' + theWheelObject.currentAngle.toString());
 		var moveToIndex = parseInt($(this).attr('data-wheel-position'));
