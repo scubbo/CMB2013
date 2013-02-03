@@ -153,3 +153,20 @@ body.mainPage, body.secondPage {
 .secondPage .sectionTitleImage {
 	width:80%;
 }
+.secondPage #titleContainer {
+	position:absolute;
+	top:81%;
+	left:80%;
+}
+.secondPage #titleContainer > div {
+	text-align:center;
+}
+.secondPage #mainTitleContainer {
+	margin-bottom:20px;
+}
+.secondPage #mainTitle {
+	width:300px;
+}
+.secondPage #secondaryTitle {
+	width:200px;
+}
