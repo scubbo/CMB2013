@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 	positionTitles();
 	makeLinks();
-	makeBCFragments(42);
+	makeBCFragments(41);
 
 	var loadingIndent = (pageWidth - 220) / 2.0;
 	var loadingIndentTop = (pageHeight - 19) / 2.0;
