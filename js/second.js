@@ -17,12 +17,15 @@ $(document).ready(function() {
 	};
 	//var queryString = getParameterByName("section");
 	var queryString = window.location.pathname.replace('/moreDetails/', '');
+	console.log('queryString is ' + queryString.toString());
 	var startPosition; 
 	if (typeof queryString !== 'undefined' && queryString != "") {
 		startPosition = positionLookup[queryString];
 	} else {
 		startPosition = 0;
 	}
+	
+	console.log('start position is ' + startPosition.toString());
 
 	$('#indexWheelContainer').css('top', pageHeight - 420).css('left', 20);
 	$('.indexWheelLink').each(function(index, elem) {
