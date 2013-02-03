@@ -16,7 +16,7 @@ $(document).ready(function() {
 		"gallery":5
 	};
 	//var queryString = getParameterByName("section");
-	var queryString = window.location.pathname.replace('/moreDetails/', '');
+	var queryString = window.location.pathname.replace('/moreDetails', '').replace('/', '');
 	var startPosition; 
 	if (typeof queryString !== 'undefined' && queryString != "") {
 		console.log('queryString is ' + queryString.toString());
