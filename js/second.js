@@ -1,4 +1,9 @@
 $(document).ready(function() {
+	console.log('window.location is');
+	console.log(window.location);
+	console.log(window.location.href);
+	console.log(window.location.search);
+
 	var pageWidth = $(window).width();
 	var pageHeight = $(window).height();
 
@@ -15,14 +20,10 @@ $(document).ready(function() {
 	console.log(queryString);
 	var startPosition; 
 	if (typeof queryString !== 'undefined' && queryString != "") {
-		console.log('case1');
 		startPosition = positionLookup[queryString];
 	} else {
-		console.log('case2');
 		startPosition = 0;
 	}
-
-	console.log(startPosition);
 
 	$('#indexWheelContainer').css('top', pageHeight - 420).css('left', 20);
 	$('.indexWheelLink').each(function(index, elem) {
@@ -224,3 +225,4 @@ function getParameterByName(name) {
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
