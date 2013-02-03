@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 	console.log(startPosition);
 
-	$('#indexWheelContainer').css('top', pageHeight - 400).css('left', 4);
+	$('#indexWheelContainer').css('top', pageHeight - 420).css('left', 20);
 	$('.indexWheelLink').each(function(index, elem) {
 		//var theWidth = $(elem).width();
 		//This is how it should really be done...I feel so dirty...
