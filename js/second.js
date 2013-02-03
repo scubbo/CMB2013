@@ -29,8 +29,6 @@ $(document).ready(function() {
 
 	$('#indexWheelContainer').css('top', pageHeight - 420).css('left', 20);
 	$('.indexWheelLink').each(function(index, elem) {
-		//var theWidth = $(elem).width();
-		//This is how it should really be done...I feel so dirty...
 		var theWidth = imageWidths[index];
 		index = index-startPosition;
 		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'left':(200-(theWidth/2.0)).toString() + 'px'});
@@ -75,6 +73,7 @@ function wheelObject(indexObject, targetObject, startWheelPosition) {
 	});
 
 	this.indexObject.children('div.indexWheelLink').click(function(event) {
+		window.history.replaceState({id:1}, 'New Title', '/moreDetails/' + $(this).attr('id').replace('Link', '');
 		console.log('Current Wheel Position is ' + theWheelObject.currentWheelPosition.toString());
 		console.log('Current angle is ' + theWheelObject.currentAngle.toString());
 		var moveToIndex = parseInt($(this).attr('data-wheel-position'));
