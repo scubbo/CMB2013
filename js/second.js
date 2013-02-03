@@ -15,9 +15,8 @@ $(document).ready(function() {
 		"vip":4, 
 		"gallery":5
 	};
-	var queryString = getParameterByName("section");
-	console.log('queryString is ');
-	console.log(queryString);
+	//var queryString = getParameterByName("section");
+	var queryString = window.location.pathname.replace('/moreDetails/', '');
 	var startPosition; 
 	if (typeof queryString !== 'undefined' && queryString != "") {
 		startPosition = positionLookup[queryString];
