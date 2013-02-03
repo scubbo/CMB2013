@@ -17,9 +17,9 @@ $(document).ready(function() {
 	};
 	//var queryString = getParameterByName("section");
 	var queryString = window.location.pathname.replace('/moreDetails/', '');
-	console.log('queryString is ' + queryString.toString());
 	var startPosition; 
 	if (typeof queryString !== 'undefined' && queryString != "") {
+		console.log('queryString is ' + queryString.toString());
 		startPosition = positionLookup[queryString];
 	} else {
 		startPosition = 0;
