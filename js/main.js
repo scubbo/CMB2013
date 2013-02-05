@@ -120,6 +120,7 @@ function scatter(elem) {
 		$(elem).css({theTransform: 'translateX(' + Number.random(-1000, 1000).toString() + ') translateY(' + Number.random(-1000, 1000).toString() + ') translateZ(' + Number.random(-500, 500).toString() + ') rotateX(' + Number.random(-720, 720).toString() + 'deg) rotateY(' + Number.random + 'deg) rotateZ(' + Number.random(-720, 720).toString() + 'deg)'});
 	}
 	console.log('done scattering');
+	return null;
 }
 
 
@@ -131,6 +132,7 @@ function unscatter(elem) {
 		$(elem).css({theTransform: 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
 	}
 	console.log('done unscattering');
+	return null;
 }
 
 function maybeNegative() {
