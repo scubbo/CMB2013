@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	console.log('starting up');
 	//makeFragments(1304);
-	var pageWidth = $(window).width();
-	var pageHeight = $(window).height();
+	var pageWidth = window.innerWidth;
+	var pageHeight = window.innerHeight;
 	console.log('widht is ' + pageWidth.toString() + ' and height is ' + pageHeight.toString());
 
 	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
