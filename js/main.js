@@ -125,10 +125,10 @@ function scatter(elem) {
 
 function unscatter(elem) {
 	console.log('unscattering');
-	var prefixes = ['-webkit-', '-moz-', '-o-', ''];
-	for (i=0;i<prefixes.length;i++) {
-		var thePrefix = prefixes[i];
-		$(elem).css({thePrefix + 'transform': 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
+	var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
+	for (i=0;i<transforms.length;i++) {
+		var theTransform = transforms[i];
+		$(elem).css({theTransform: 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
 	}
 	console.log('done unscattering');
 }
