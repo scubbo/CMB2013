@@ -116,7 +116,8 @@ function scatter(elem) {
 	console.log('scattering')
 	var prefixes = ['-webkit-', '-moz-', '-o-', ''];
 	for (i=0;i<prefixes.length;i++) {
-		$(elem).css({prefixes[i] + 'transform': 'translateX(' + Number.random(-1000, 1000).toString() + ') translateY(' + Number.random(-1000, 1000).toString() + ') translateZ(' + Number.random(-500, 500).toString() + ') rotateX(' + Number.random(-720, 720).toString() + 'deg) rotateY(' + Number.random + 'deg) rotateZ(' + Number.random(-720, 720).toString() + 'deg)'});
+		var thePrefix = prefixes[i];
+		$(elem).css({thePrefix + 'transform': 'translateX(' + Number.random(-1000, 1000).toString() + ') translateY(' + Number.random(-1000, 1000).toString() + ') translateZ(' + Number.random(-500, 500).toString() + ') rotateX(' + Number.random(-720, 720).toString() + 'deg) rotateY(' + Number.random + 'deg) rotateZ(' + Number.random(-720, 720).toString() + 'deg)'});
 	}
 	console.log('done scattering');
 }
@@ -126,7 +127,8 @@ function unscatter(elem) {
 	console.log('unscattering');
 	var prefixes = ['-webkit-', '-moz-', '-o-', ''];
 	for (i=0;i<prefixes.length;i++) {
-		$(elem).css({prefixes[i] + 'transform': 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
+		var thePrefix = prefixes[i];
+		$(elem).css({thePrefix + 'transform': 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
 	}
 	console.log('done unscattering');
 }
