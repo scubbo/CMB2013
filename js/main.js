@@ -1,14 +1,9 @@
 $(document).ready(function() {
-	console.log('starting up');
-	//makeFragments(1304);
 	var pageWidth = window.innerWidth;
 	var pageHeight = window.innerHeight;
-	console.log('widht is ' + pageWidth.toString() + ' and height is ' + pageHeight.toString());
 
 	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
-	console.log('picWidth is ' + picWidth.toString());
 	var indent = (pageWidth - picWidth) / 2.0;
-	console.log('indent is ' + indent.toString());
 	//$('#introPic, #nextPicContainer').css('width', picWidth).css('height', picWidth).css('left', indent);
 	$('#introPic, #nextPicContainer').css('width', picWidth).css('left', indent);
 
@@ -93,7 +88,7 @@ function makeBCFragments(number) {
 		var fragIndex = $(elem).attr('id').replace('fragment', '');
 		scatter = makeScatterTarget();
 		$(elem).attr('data-nextscatter', scatter);
-		theFragment.mouseover(function() {
+		theFragment.mouseenter(function() {
 			scatter = $(elem).attr('data-nextscatter');
 			scatterX = scatter.split(',')[0];
 			scatterY = scatter.split(',')[1];
