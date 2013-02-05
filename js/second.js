@@ -4,8 +4,8 @@ $(document).ready(function() {
 	console.log(window.location.href);
 	console.log(window.location.search);
 
-	var pageWidth = $(window).width();
-	var pageHeight = $(window).height();
+	var pageWidth = window.innerWidth;
+	var pageHeight = window.innerHeight;
 
 	positionLookup = {
 		"workers":0, 
