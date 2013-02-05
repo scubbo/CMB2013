@@ -89,9 +89,21 @@ function makeBCFragments(number) {
 		scatter = makeScatterTarget();
 		$(elem).attr('data-nextscatter', scatter);
 		theFragment.mouseenter(function() {
-			var i = scatter(theFragment);
+			console.log('scattering')
+			var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
+			for (i=0;i<transforms.length;i++) {
+				var theTransform = transforms[i];
+				$(elem).css({theTransform: 'translateX(' + Number.random(-1000, 1000).toString() + ') translateY(' + Number.random(-1000, 1000).toString() + ') translateZ(' + Number.random(-500, 500).toString() + ') rotateX(' + Number.random(-720, 720).toString() + 'deg) rotateY(' + Number.random + 'deg) rotateZ(' + Number.random(-720, 720).toString() + 'deg)'});
+			}
+			console.log('done scattering');
 			setTimeout(function() {
-				 i = unscatter(theFragment);
+				console.log('unscattering');
+				var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
+				for (i=0;i<transforms.length;i++) {
+					var theTransform = transforms[i];
+					$(elem).css({theTransform: 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
+				}
+				console.log('done unscattering');
 			}, 300);
 		});
 		var left = fragmentPositions[fragIndex]['x'];
