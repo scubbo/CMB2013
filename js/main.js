@@ -6,7 +6,7 @@ $(document).ready(function() {
 	console.log('widht is ' + pageWidth.toString() + ' and height is ' + pageHeight.toString());
 
 	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
-	console.log('picWidth is ' + picWidth.toString();
+	console.log('picWidth is ' + picWidth.toString());
 	var indent = (pageWidth - picWidth) / 2.0;
 	console.log('indent is ' + indent.toString());
 	//$('#introPic, #nextPicContainer').css('width', picWidth).css('height', picWidth).css('left', indent);
