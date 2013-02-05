@@ -86,15 +86,12 @@ function makeBCFragments(number) {
 	$('.BCfragment').each(function(index, elem) {
 		var theFragment = $(elem);
 		var fragIndex = $(elem).attr('id').replace('fragment', '');
-		scatter = makeScatterTarget();
-		$(elem).attr('data-nextscatter', scatter);
 		theFragment.mouseenter(function() {
 			console.log('scattering')
 			var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
 			for (i=0;i<transforms.length;i++) {
-		
 				var theTransform = transforms[i];
-				$(elem).css({theTransform: 'translateX(' + Math.random(-1000, 1000).toString() + ') translateY(' + Math.random(-1000, 1000).toString() + ') translateZ(' + Math.random(-500, 500).toString() + ') rotateX(' + Math.random(-720, 720).toString() + 'deg) rotateY(' + Math.random + 'deg) rotateZ(' + Math.random(-720, 720).toString() + 'deg)'});
+				$(elem).css(theTransform: 'translateX(' + Math.random(-1000, 1000).toString() + ') translateY(' + Math.random(-1000, 1000).toString() + ') translateZ(' + Math.random(-500, 500).toString() + ') rotateX(' + Math.random(-720, 720).toString() + 'deg) rotateY(' + Math.random + 'deg) rotateZ(' + Math.random(-720, 720).toString() + 'deg)');
 			}
 			console.log('done scattering');
 			setTimeout(function() {
@@ -102,7 +99,7 @@ function makeBCFragments(number) {
 				var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
 				for (i=0;i<transforms.length;i++) {
 					var theTransform = transforms[i];
-					$(elem).css({theTransform: 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
+					$(elem).css(theTransform: 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)');
 				}
 				console.log('done unscattering');
 			}, 3000);
