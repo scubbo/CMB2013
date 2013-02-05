@@ -89,7 +89,7 @@ function makeBCFragments(number) {
 		theFragment.mouseenter(function() {
 			console.log('scattering')
 			var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
-			var theTransformString = 'translateX(' + Math.random(-1000, 1000).toString() + 'px) translateY(' + Math.random(-1000, 1000).toString() + 'px) translateZ(' + Math.random(-500, 500).toString() + 'px) rotateX(' + Math.random(-720, 720).toString() + 'deg) rotateY(' + Math.random(-720, 720).toString() + 'deg) rotateZ(' + Math.random(-720, 720).toString() + 'deg)';
+			var theTransformString = 'translateX(' + (Math.random()*2000 - 1000).toString() + 'px) translateY(' + (Math.random()*2000 - 1000).toString() + 'px) translateZ(' + (Math.random()*1000 - 500).toString() + 'px) rotateX(' + (Math.random()*1440 - 720).toString() + 'deg) rotateY(' + (Math.random()*1440 - 720).toString() + 'deg) rotateZ(' + (Math.random()*1440 - 720).toString() + 'deg)';
 			console.log(theTransformString);
 			for (i=0;i<transforms.length;i++) {
 				var theTransform = transforms[i];
