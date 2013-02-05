@@ -92,6 +92,7 @@ function makeBCFragments(number) {
 			console.log('scattering')
 			var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
 			for (i=0;i<transforms.length;i++) {
+		
 				var theTransform = transforms[i];
 				$(elem).css({theTransform: 'translateX(' + Math.random(-1000, 1000).toString() + ') translateY(' + Math.random(-1000, 1000).toString() + ') translateZ(' + Math.random(-500, 500).toString() + ') rotateX(' + Math.random(-720, 720).toString() + 'deg) rotateY(' + Math.random + 'deg) rotateZ(' + Math.random(-720, 720).toString() + 'deg)'});
 			}
@@ -104,7 +105,7 @@ function makeBCFragments(number) {
 					$(elem).css({theTransform: 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
 				}
 				console.log('done unscattering');
-			}, 300);
+			}, 3000);
 		});
 		var left = fragmentPositions[fragIndex]['x'];
 		var top = fragmentPositions[fragIndex]['y'];
