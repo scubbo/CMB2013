@@ -89,9 +89,9 @@ function makeBCFragments(number) {
 		scatter = makeScatterTarget();
 		$(elem).attr('data-nextscatter', scatter);
 		theFragment.mouseenter(function() {
-			scatter(theFragment)
+			var i = scatter(theFragment);
 			setTimeout(function() {
-				unscatter(theFragment)
+				 i = unscatter(theFragment);
 			}, 300);
 		});
 		var left = fragmentPositions[fragIndex]['x'];
