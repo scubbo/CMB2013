@@ -89,7 +89,7 @@ function makeBCFragments(number) {
 		theFragment.mouseenter(function() {
 			console.log('scattering')
 			var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
-			var theTransformString = 'translateX(' + (Math.random()*2000 - 1000).toString() + 'px) translateY(' + (Math.random()*2000 - 1000).toString() + 'px) translateZ(' + (Math.random()*1000 - 500).toString() + 'px) rotateX(' + (Math.random()*1440 - 720).toString() + 'deg) rotateY(' + (Math.random()*1440 - 720).toString() + 'deg) rotateZ(' + (Math.random()*1440 - 720).toString() + 'deg)';
+			var theTransformString = 'translateX(' + (Math.random()*1000 - 500).toString() + 'px) translateY(' + (Math.random()*1000 - 500).toString() + 'px) translateZ(' + (Math.random()*500 - 250).toString() + 'px) rotateX(' + (Math.random()*1440 - 720).toString() + 'deg) rotateY(' + (Math.random()*1440 - 720).toString() + 'deg) rotateZ(' + (Math.random()*1440 - 720).toString() + 'deg)';
 			console.log(theTransformString);
 			for (i=0;i<transforms.length;i++) {
 				var theTransform = transforms[i];
@@ -105,7 +105,7 @@ function makeBCFragments(number) {
 					$(elem).css(theTransform, 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)');
 				}
 				console.log('done unscattering');
-			}, 3000);
+			}, 300);
 		});
 		var left = fragmentPositions[fragIndex]['x'];
 		var top = fragmentPositions[fragIndex]['y'];
