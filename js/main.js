@@ -89,23 +89,10 @@ function makeBCFragments(number) {
 		scatter = makeScatterTarget();
 		$(elem).attr('data-nextscatter', scatter);
 		theFragment.mouseenter(function() {
-			scatter = $(elem).attr('data-nextscatter');
-			scatterX = scatter.split(',')[0];
-			scatterY = scatter.split(',')[1];
-			rotateX = scatter.split(',')[2];
-			rotateY = scatter.split(',')[3];
-			rotate = scatter.split(',')[4];
-			theFragment.css({'-webkit-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
-			theFragment.css({'-moz-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
-			theFragment.css({'-o-transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
-			theFragment.css({'transform': 'translateX(' + scatterX + '%) translateY(' + scatterY + '%) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) rotate(' + rotate + 'deg)'});
+			scatter(theFragment)
 			setTimeout(function() {
-				theFragment.css({'-webkit-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
-				theFragment.css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
-				theFragment.css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
-				theFragment.css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)'});
+				unscatter(theFragment)
 			}, 300);
-			$(elem).attr('data-nextscatter', makeScatterTarget());
 		});
 		var left = fragmentPositions[fragIndex]['x'];
 		var top = fragmentPositions[fragIndex]['y'];
@@ -123,6 +110,25 @@ function makeFragmentWrapperDiv(longSide, shortSide, angle) {
 
 function makeScatterTarget() {
 	return maybeNegative() + (300 + Math.random() * 200).toString() + ',' + maybeNegative() + (300 + Math.random() * 200).toString() + ',' + maybeNegative() + (Math.random() * 600).toString() + ',' + maybeNegative() + (Math.random() * 600).toString() + ',' + maybeNegative() + (Math.random() * 600).toString();
+}
+
+function scatter(elem) {
+	console.log('scattering')
+	var prefixes = ['-webkit-', '-moz-', '-o-', ''];
+	for (i=0;i<prefixes.length;i++) {
+		$(elem).css({prefixes[i] + 'transform': 'translateX(' + Number.random(-1000, 1000).toString() + ') translateY(' + Number.random(-1000, 1000).toString() + ') translateZ(' + Number.random(-500, 500).toString() + ') rotateX(' + Number.random(-720, 720).toString() + 'deg) rotateY(' + Number.random + 'deg) rotateZ(' + Number.random(-720, 720).toString() + 'deg)'});
+	}
+	console.log('done scattering');
+}
+
+
+function unscatter(elem) {
+	console.log('unscattering');
+	var prefixes = ['-webkit-', '-moz-', '-o-', ''];
+	for (i=0;i<prefixes.length;i++) {
+		$(elem).css({prefixes[i] + 'transform': 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)'});
+	}
+	console.log('done unscattering');
 }
 
 function maybeNegative() {
