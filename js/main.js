@@ -105,7 +105,7 @@ function makeBCFragments(number) {
 					$(elem).css(theTransform, 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)');
 				}
 				console.log('done unscattering');
-			}, 300);
+			}, 600);
 		});
 		var left = fragmentPositions[fragIndex]['x'];
 		var top = fragmentPositions[fragIndex]['y'];
