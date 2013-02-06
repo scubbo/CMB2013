@@ -87,30 +87,33 @@ function makeBCFragments(number) {
 		var theFragment = $(elem);
 		var fragIndex = $(elem).attr('id').replace('fragment', '');
 		theFragment.mouseenter(function() {
-			console.log('scattering')
 			var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
 			var theTransformString = 'translateX(' + (Math.random()*1000 - 500).toString() + 'px) translateY(' + (Math.random()*1000 - 500).toString() + 'px) translateZ(' + (Math.random()*500 - 250).toString() + 'px) rotateX(' + (Math.random()*1440 - 720).toString() + 'deg) rotateY(' + (Math.random()*1440 - 720).toString() + 'deg) rotateZ(' + (Math.random()*1440 - 720).toString() + 'deg)';
 			console.log(theTransformString);
 			for (i=0;i<transforms.length;i++) {
 				var theTransform = transforms[i];
-				console.log(theTransform);
 				$(elem).css(theTransform, theTransformString);
 			}
-			console.log('done scattering');
 			setTimeout(function() {
-				console.log('unscattering');
 				var transforms = ['-webkit-transform', '-moz-transform', '-o-transform', 'transform'];
 				for (i=0;i<transforms.length;i++) {
 					var theTransform = transforms[i];
 					$(elem).css(theTransform, 'translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)');
 				}
-				console.log('done unscattering');
 			}, 600);
 		});
+	});
+	positionBCFragments();
+	window.onresize = positionBCFragments;
+}
+
+function positionBCFragments() {
+	$('.BCfragment').each(function(index, elem) {
+		var theFragment = $(elem);
+		var fragIndex = $(elem).attr('id').replace('fragment', '');
 		var left = fragmentPositions[fragIndex]['x'];
 		var top = fragmentPositions[fragIndex]['y'];
 		var width = fragmentPositions[fragIndex]['width'];
-		//theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', '-webkit-transform':'rotate(' + rotate.toString() + 'deg)', '-moz-transform':'rotate(' + rotate.toString() + 'deg)', '-o-transform':'rotate(' + rotate.toString() + 'deg)', 'transform':'rotate(' + rotate.toString() + 'deg)'});
 		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', 'width':width.toString() + '%'});
 	});
 }
