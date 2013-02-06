@@ -30,8 +30,8 @@ body.mainPage, body.secondPage {
 	transition: transform 600ms ease-in-out, opacity 600ms ease-in;
 }
 .mainPage #mainTitle {
-	top:49%;
-	left:19%;
+	top:46%;
+	left:21%;
 	width:64%;
 }
 .mainPage #secondaryTitle {
