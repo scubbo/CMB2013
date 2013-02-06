@@ -155,6 +155,30 @@ function maybeNegative() {
 	}
 }
 
+function getInternetExplorerVersion()
+// Returns the version of Internet Explorer or a -1
+// (indicating the use of another browser).
+{
+  var rv = -1; // Return value assumes failure.
+  if (navigator.appName == 'Microsoft Internet Explorer')
+  {
+    var ua = navigator.userAgent;
+    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+    if (re.exec(ua) != null)
+      rv = parseFloat( RegExp.$1 );
+  }
+  return rv;
+}
+function checkVersion()
+{
+  var ver = getInternetExplorerVersion();
+
+  if ( ver > -1 )
+  {
+    alert("This website uses some features that may not be supported by Internet Explorer. Certain portions of this website may not render correctly. We highly recommend you view this site in a different browser.")
+  }
+}
+
 var fragmentPositions = [
 	{x:33, y:27, width:4.2},
 	{x:28.5, y:64.2, width:2.8}, 
