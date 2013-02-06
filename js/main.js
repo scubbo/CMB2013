@@ -104,7 +104,7 @@ function makeBCFragments(number) {
 		});
 	});
 	positionBCFragments();
-	window.onresize = positionBCFragments;
+	window.onresize = resizeContainers;
 }
 
 function positionBCFragments() {
@@ -116,6 +116,16 @@ function positionBCFragments() {
 		var width = fragmentPositions[fragIndex]['width'];
 		theFragment.css({'left':left.toString() + '%', 'top':top.toString() + '%', 'width':width.toString() + '%'});
 	});
+}
+
+function resizeContainers() {
+	console.log('resizing');
+	var pageWidth = window.innerWidth;
+	var pageHeight = window.innerHeight;
+
+	var picWidth = Math.min(pageWidth*0.8, pageHeight);	
+	var indent = (pageWidth - picWidth) / 2.0;
+	$('#introPic, #nextPicContainer').css('width', picWidth).css('left', indent);
 }
 
 function makeFragmentWrapperDiv(longSide, shortSide, angle) {
