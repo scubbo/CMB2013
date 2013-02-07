@@ -200,7 +200,7 @@ var imageWidths = [
 	80, 
 	130, 
 	75, 
-	141
+	150
 ]
 
 var range = function(start, end, step) {
