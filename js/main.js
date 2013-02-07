@@ -53,9 +53,6 @@ function makeLinks() {
 	for (i=0;i<links.length;i++) {
 		$('#nextPicContainer').append('<img src="img/links/' + links[i] + '.png" class="link" id="link' + i.toString() + '" />');
 	}
-	$('.link').click(function() {
-		window.location.href = "/moreDetails/" + $(this).attr('src').replace('img/links/', '').replace('.png', '');
-	});	
 }
 
 function firstTransition() {
@@ -73,7 +70,7 @@ function firstTransition() {
 					$('#secondaryTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
 					$('#secondaryTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
 					$('#secondaryTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-					setTimeout(activateBCFragments, 1200);
+					setTimeout(activateBCFragments, 1000);
 				}, 1000);
 			});
 		}, 2000);
@@ -109,6 +106,9 @@ function activateBCFragments() {
 			}, 600);
 		});
 	});
+	$('.link').click(function() {
+		window.location.href = "/moreDetails/" + $(this).attr('src').replace('img/links/', '').replace('.png', '');
+	});	
 }
 
 function positionBCFragments() {
