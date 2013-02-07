@@ -221,7 +221,7 @@ body.mainPage, body.secondPage {
 .ticketsSectionInner p {
 	font-size:18px;
 }
-.actsSectionInner p, .vipSectionInner p, .contentSectionInner p strong {
+#actsSectionInner p, #vipSectionInner p, #contentSectionInner p strong {
 	font-size:30px;
 	line-height:53px;
 	font-weight:bold;
