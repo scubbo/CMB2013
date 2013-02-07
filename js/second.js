@@ -162,17 +162,14 @@ function rotateTo(targetObject, deg) {
 
 function resizeInners() {
 	var pageHeight = window.innerHeight;
-	console.log('page height calculated as ' + pageHeight.toString());
 	$('.sectionInner').each(function(index, elem) {
-		console.log(elem);
-		console.log('title height calculated as ' + $(elem).siblings('.sectionTitle').height().toString());
 		var theHeight = pageHeight - ($(elem).siblings('.sectionTitle').height() + 30);
-		console.log('the height calculated as ' + theHeight.toString());
 		$(elem).css('height', theHeight + 'px');
 	});
 }
 
 function setupjCarousel() {
+	console.log('setting up');	
 	$('#galleryCarouselRoot').jcarousel({
 		'wrap': 'both'
 	});
@@ -192,7 +189,7 @@ var imageWidths = [
 	107, 
 	174, 
 	100,
-	148
+	188
 ];
 
 var range = function(start, end, step) {
