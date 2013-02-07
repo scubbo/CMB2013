@@ -4,6 +4,9 @@ body {
 a {
 	color:inherit;
 }
+strong {
+	font-weight:bold;
+}
 body.mainPage, body.secondPage {
 	overflow:hidden;
 }
@@ -170,13 +173,13 @@ body.mainPage, body.secondPage {
 #mainTitleContainer a {
 	display:inline-block;
 }
-.secondPage #mainTitle {
+.secondPage #mainTitle, .charity #mainTitle {
 	width:300px;
 }
-.secondPage #secondaryTitle {
+.secondPage #secondaryTitle, .charity #secondaryTitle {
 	width:200px;
 }
-.secondPage table#ticketPriceTable {
+.secondPage table#ticketPriceTable, .secondPage table#contactTable {
 	font:#000;
 	margin:0 auto;
 }
@@ -186,9 +189,12 @@ body.mainPage, body.secondPage {
 .charity h1 {
 	width:50%;
 	color:#fff;
-	margin:0 auto;
+	margin:30px auto;
 }
 .charity p {
 	text-align:center;
 	color:#fff;
+	width:50%;
+	font-size:20px;
+	margin:20px auto;
 }
