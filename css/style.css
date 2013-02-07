@@ -163,6 +163,7 @@ body.mainPage, body.secondPage {
 }
 .secondPage .sectionTitleImage {
 	width:50%;
+	margin-bottom:25px;
 }
 .secondPage #titleContainer, .charity #titleContainer {
 	position:absolute;
@@ -174,6 +175,12 @@ body.mainPage, body.secondPage {
 }
 .secondPage .sectionInner {
 	overflow:scroll;
+}
+.secondPage li {
+	margin-bottom:5px;
+}
+.secondPage ol {
+	margin-bottom:10px;
 }
 .secondPage #mainTitleContainer, .charity #mainTitleContainer {
 	margin-bottom:20px;
@@ -193,12 +200,31 @@ body.mainPage, body.secondPage {
 }
 .secondPage table#contactTable {
 	text-align:center;
+	font-size:18px;
 }
 .secondPage table#contactTable a {
 	font-size:18px;
 }
 .secondPage table#contactTable td {
 	padding:0px 14px 15px 14px;
+}
+#workersContactEmail {
+	text-align:center;
+	font-weight:bold;
+	font-size:21px;
+	display:block;
+	margin-bottom:30px;
+}
+#positionAvailableTitle {
+	font-size:24px;
+}
+.ticketsSectionInner p {
+	font-size:18px;
+}
+.actsSectionInner p, .vipSectionInner p, .contentSectionInner p strong {
+	font-size:30px;
+	line-height:53px;
+	font-weight:bold;
 }
 .charity {
 	background-color:#000;
