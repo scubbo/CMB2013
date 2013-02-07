@@ -151,18 +151,21 @@ body.mainPage, body.secondPage {
 	margin-top:30px;
 }
 .secondPage .sectionTitleImage {
-	width:80%;
+	width:50%;
 }
 .secondPage #titleContainer {
 	position:absolute;
 	top:81%;
-	left:80%;
+	right:2%;
 }
 .secondPage #titleContainer > div {
 	text-align:center;
 }
 .secondPage #mainTitleContainer {
 	margin-bottom:20px;
+}
+#mainTitleContainer a {
+	display:inline-block;
 }
 .secondPage #mainTitle {
 	width:300px;
