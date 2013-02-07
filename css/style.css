@@ -153,15 +153,15 @@ body.mainPage, body.secondPage {
 .secondPage .sectionTitleImage {
 	width:50%;
 }
-.secondPage #titleContainer {
+.secondPage #titleContainer, .charity #titleContainer {
 	position:absolute;
 	top:81%;
 	right:2%;
 }
-.secondPage #titleContainer > div {
+.secondPage #titleContainer > div, .charity #titleContainer > div {
 	text-align:center;
 }
-.secondPage #mainTitleContainer {
+.secondPage #mainTitleContainer, .charity #mainTitleContainer {
 	margin-bottom:20px;
 }
 #mainTitleContainer a {
