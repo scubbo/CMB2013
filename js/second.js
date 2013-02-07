@@ -191,6 +191,7 @@ function setupjCarousel() {
 	$('.jCarouselNext').jcarouselControl({
 		target: '+=1'
 	});*/
+/*
 	$('.jCarouselPrev').click(function() {
 		$('.jcarousel').jcarousel('scroll', '-=1');
 		console.log('scroll back');
@@ -199,7 +200,7 @@ function setupjCarousel() {
 	$('.jCarouselNext').click(function() {
 		$('.jcarousel').jcarousel('scroll', '+=1');
 		console.log('scroll forward');
-	});
+	});*/
 }
 
 var imageWidths = [
