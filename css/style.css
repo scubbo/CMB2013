@@ -255,3 +255,24 @@ body.mainPage, body.secondPage {
 	margin:0 auto 20px;
 	text-align:center;
 }
+/**************
+secondpage text colouration
+**************/
+#workersSectionInner {
+	color:#0a65b6;
+}
+#ticketsSectionInner {
+	color:#9f1d89;
+}
+#actsSectionInner {
+	color:#ce004d;
+}
+#contactsSectionInner {
+	color:#c45c07;
+}
+#vipSectionInner {
+	color:#8c8c00;
+}
+#gallerySectionInner {
+	color:#00af6e;
+}
