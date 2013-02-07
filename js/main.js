@@ -73,7 +73,7 @@ function firstTransition() {
 					$('#secondaryTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
 					$('#secondaryTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
 					$('#secondaryTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
-					setTimeout(activateBCFragments, 2000);
+					setTimeout(activateBCFragments, 1200);
 				}, 1000);
 			});
 		}, 2000);
