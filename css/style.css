@@ -267,7 +267,7 @@ secondpage text colouration
 #actsSectionInner * {
 	color:#ce004d !important;
 }
-#contactsSectionInner *, #contactsSectionInner * *, #contactTable {
+#contactsSectionInner *, #contactsSectionInner * *, #contactTable *, #contactTable * *, #contactTable * * *, #contactTable * * * * {
 	color:#c45c07 !important;
 }
 #vipSectionInner * {
