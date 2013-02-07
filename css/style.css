@@ -227,15 +227,15 @@ body.mainPage, body.secondPage {
 	line-height:50px;
 	font-weight:bold;
 }
-.charity {
+.charity, .ticketInfoPage {
 	background-color:#000;
 }
-.charity h1 {
+.charity h1, .ticketInfoPage p {
 	width:50%;
 	color:#fff;
 	margin:30px auto;
 }
-.charity p {
+.charity p, .ticketInfoPage p {
 	text-align:center;
 	color:#fff;
 	width:50%;
