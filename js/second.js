@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'), startPosition);
 	resizeInners();
-	window.resize = resizeInners;
+	window.onresize = resizeInners;
 });
 
 function wheelObject(indexObject, targetObject, startWheelPosition) {

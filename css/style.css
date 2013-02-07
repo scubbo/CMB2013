@@ -197,11 +197,8 @@ body.mainPage, body.secondPage {
 .secondPage table#contactTable a {
 	font-size:18px;
 }
-.secondPage table#contactTable tr {
-	margin-bottom:4px;
-}
 .secondPage table#contactTable td {
-	margin-right:5px;
+	padding:0px 14px 15px 14px;
 }
 .charity {
 	background-color:#000;
