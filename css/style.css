@@ -120,17 +120,17 @@ body.mainPage, body.secondPage {
 }
 .secondPage #indexWheelContainer {
 	position:absolute;
-	height:400px;
-	width:400px;
+	height:300px;
+	width:300px;
 	left:10px;
 	bottom:10px;
 }
 .secondPage .indexWheelLink {
 	position:absolute;
-	top:176px;
+	top:132px;
 }
 .secondPage .indexWheelLinkImage {
-	height:48px;
+	height:36px;
 }
 .secondPage #wheelViewport, {
 	position:absolute;
