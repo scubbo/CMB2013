@@ -258,21 +258,21 @@ body.mainPage, body.secondPage {
 /**************
 secondpage text colouration
 **************/
-#workersSectionInner {
+#workersSectionInner * {
 	color:#0a65b6 !important;
 }
-#ticketsSectionInner {
+#ticketsSectionInner * {
 	color:#9f1d89 !important;
 }
-#actsSectionInner {
+#actsSectionInner * {
 	color:#ce004d !important;
 }
-#contactsSectionInner {
+#contactsSectionInner * {
 	color:#c45c07 !important;
 }
-#vipSectionInner {
+#vipSectionInner * {
 	color:#8c8c00 !important;
 }
-#gallerySectionInner {
+#gallerySectionInner * {
 	color:#00af6e !important;
 }
