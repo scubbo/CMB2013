@@ -173,13 +173,22 @@ function setupjCarousel() {
 	$('.jcarousel').jcarousel({
 		'wrap': 'both'
 	});
-
+/*
 	$('.jCarouselPrev').jcarouselControl({
 		target: '-=1'
 	});
 
 	$('.jCarouselNext').jcarouselControl({
 		target: '+=1'
+	});*/
+	$('.jCarouselPrev').click(function() {
+		$('.jcarousel').jcarousel('scroll', '-=1');
+		console.log('scroll back');
+	});
+
+	$('.jCarouselNext').click(function() {
+		$('.jcarousel').jcarousel('scroll', '+=1');
+		console.log('scroll forward');
 	});
 	for (i=1;i<43;i++) {
 		$('.jcarousel').children().eq(0).append('<li id="galleryImage' + i.toString() + '"><img src="/img/galleryImages/' + i.toString() + '.JPG"></li>')
