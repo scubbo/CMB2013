@@ -200,6 +200,9 @@ body.mainPage, body.secondPage {
 .secondPage table#contactTable tr {
 	margin-bottom:4px;
 }
+.secondPage table#contactTable td {
+	margin-right:5px;
+}
 .charity {
 	background-color:#000;
 }
@@ -227,4 +230,5 @@ body.mainPage, body.secondPage {
 	font-size:30px;
 	display:block;
 	margin:0 auto 20px;
+	text-align:center;
 }
