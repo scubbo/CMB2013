@@ -237,10 +237,19 @@ body.mainPage, body.secondPage {
 }
 .charity p, .ticketInfoPage p {
 	text-align:center;
-	color:#fff;
+	color:#ddd;
 	width:50%;
 	font-size:20px;
 	margin:20px auto;
+}
+.ticketInfoPage h2, .ticketInfoPage ul {
+	display:block;
+	text-align:center;
+	color:#ddd;
+	margin:10px auto;
+}
+.ticketInfoPage h2 {
+	margin-top:20px;
 }
 .charityImage {
 	display:block;
