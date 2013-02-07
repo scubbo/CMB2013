@@ -47,6 +47,8 @@ $(document).ready(function() {
 	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'), startPosition);
 	resizeInners();
 	window.onresize = resizeInners;
+
+	setupjCarousel();
 });
 
 function wheelObject(indexObject, targetObject, startWheelPosition) {
@@ -167,6 +169,20 @@ function resizeInners() {
 		var theHeight = pageHeight - ($(elem).siblings('.sectionTitle').height() + 30);
 		console.log('the height calculated as ' + theHeight.toString());
 		$(elem).css('height', theHeight + 'px');
+	});
+}
+
+function setupjCarousel() {
+	$('#galleryCarouselRoot').jcarousel({
+		'wrap': 'both'
+	});
+
+	$('#galleryCarouselPrev').jcarouselControl({
+		target: '-=1'
+	});
+
+	$('#galleryCarouselNext').jcarouselControl({
+		target: '+=1'
 	});
 }
 
