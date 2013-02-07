@@ -171,7 +171,12 @@ function resizeInners() {
 function setupjCarousel() {
 	console.log('setting up');	
 	$('.jcarousel').jcarousel({
-		'wrap': 'both'
+		scroll: 1,
+		visible: 1,
+		animation: 3000,
+		auto: 8,
+		wrap: 'circular',
+		itemFallbackDimension: 300
 	});
 /*
 	$('.jCarouselPrev').jcarouselControl({
