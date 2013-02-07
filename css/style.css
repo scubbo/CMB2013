@@ -195,7 +195,7 @@ body.mainPage, body.secondPage {
 	width:200px;
 }
 .secondPage table#ticketPriceTable, .secondPage table#contactTable {
-	color:#fff;
+	/*color:#fff;*/
 	margin:0 auto;
 }
 .secondPage table#contactTable {
@@ -267,7 +267,7 @@ secondpage text colouration
 #actsSectionInner * {
 	color:#ce004d !important;
 }
-#contactsSectionInner * {
+#contactsSectionInner *, #contactsSectionInner * *, #contactTable {
 	color:#c45c07 !important;
 }
 #vipSectionInner * {
