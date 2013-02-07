@@ -31,7 +31,7 @@ $(document).ready(function() {
 	$('.indexWheelLink').each(function(index, elem) {
 		var theWidth = imageWidths[index];
 		index = index-startPosition;
-		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-160px)', 'left':(200-(theWidth/2.0)).toString() + 'px'});
+		$(elem).css({'-webkit-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-120px)', '-moz-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-120px)', '-o-transform':'rotate(' + (index*60).toString() + 'deg) translateY(-120px)', 'transform':'rotate(' + (index*60).toString() + 'deg) translateY(-120px)', 'left':(150-(theWidth/2.0)).toString() + 'px'});
 	});
 
 	$('#wheelViewport').height(pageHeight).width(pageWidth);
@@ -185,14 +185,23 @@ function setupjCarousel() {
 	});
 }
 
-var imageWidths = [
+/*var imageWidths = [
 	197, 
 	139, 
 	107, 
 	174, 
 	100,
 	188
-];
+];*/
+
+var imageWidths = [
+	147, 
+	105, 
+	80, 
+	130, 
+	75, 
+	141
+]
 
 var range = function(start, end, step) {
     var range = [];

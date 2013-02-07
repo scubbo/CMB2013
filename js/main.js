@@ -192,7 +192,8 @@ function checkVersion()
 
   if ( ver > -1 )
   {
-    alert("This website uses some features that may not be supported by Internet Explorer. Certain portions of this website may not render correctly. We highly recommend you view this site in a different browser.")
+	alert('This website uses some new features not available in Internet Explorer. You will be redirected directly to the ticket purchase site. If you wish to view this site, please use a different browser.');
+	window.location.href = "https://claremayball.soc.srcf.net/ticketing";
   }
 }
 
