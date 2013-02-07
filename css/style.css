@@ -255,6 +255,9 @@ body.mainPage, body.secondPage {
 	margin:0 auto 20px;
 	text-align:center;
 }
+.applyForTicketsLink {
+	font-size:28px;
+}
 /**************
 secondpage text colouration
 **************/

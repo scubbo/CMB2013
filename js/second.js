@@ -183,24 +183,6 @@ function setupjCarousel() {
 		wrap: 'circular',
 		itemFallbackDimension: 300
 	});
-/*
-	$('.jCarouselPrev').jcarouselControl({
-		target: '-=1'
-	});
-
-	$('.jCarouselNext').jcarouselControl({
-		target: '+=1'
-	});*/
-/*
-	$('.jCarouselPrev').click(function() {
-		$('.jcarousel').jcarousel('scroll', '-=1');
-		console.log('scroll back');
-	});
-
-	$('.jCarouselNext').click(function() {
-		$('.jcarousel').jcarousel('scroll', '+=1');
-		console.log('scroll forward');
-	});*/
 }
 
 var imageWidths = [
