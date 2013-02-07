@@ -73,6 +73,7 @@ function firstTransition() {
 					$('#secondaryTitle').css({'-moz-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
 					$('#secondaryTitle').css({'-o-transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
 					$('#secondaryTitle').css({'transform': 'translateX(0px) translateY(0px) rotateX(0deg) rotateY(0deg) rotate(0deg)', 'opacity':1});
+					setTimeout(activateBCFragments, 500);
 				}, 1000);
 			});
 		}, 2000);
@@ -83,6 +84,11 @@ function makeBCFragments(number) {
 	for (i=0;i<number;i++) {
 		$('#nextPicContainer').append('<img src="img/fragments/BC' + (i+1).toString() + '.png" class="BCfragment" id="fragment' + i.toString() + '" />');
 	}
+	positionBCFragments();
+	window.onresize = resizeContainers;
+}
+
+function activateBCFragments() {
 	$('.BCfragment').each(function(index, elem) {
 		var theFragment = $(elem);
 		var fragIndex = $(elem).attr('id').replace('fragment', '');
@@ -103,8 +109,6 @@ function makeBCFragments(number) {
 			}, 600);
 		});
 	});
-	positionBCFragments();
-	window.onresize = resizeContainers;
 }
 
 function positionBCFragments() {
