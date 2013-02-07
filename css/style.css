@@ -220,6 +220,10 @@ body.mainPage, body.secondPage {
 #positionAvailableTitle {
 	font-size:24px;
 }
+.ticketsSectionInner {
+	width:90%;
+	margin:0 auto;
+}
 .ticketsSectionInner p {
 	font-size:18px;
 }
