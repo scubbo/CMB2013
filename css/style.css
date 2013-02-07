@@ -174,7 +174,7 @@ body.mainPage, body.secondPage {
 	text-align:center;
 }
 .secondPage .sectionInner {
-	overflow:scroll;
+	/*overflow:scroll;*/
 }
 .secondPage li {
 	margin-bottom:5px;
@@ -222,8 +222,8 @@ body.mainPage, body.secondPage {
 	font-size:18px;
 }
 #actsSectionInner p, #vipSectionInner p, #contactSectionInner p strong {
-	font-size:30px;
-	line-height:53px;
+	font-size:28px;
+	line-height:50px;
 	font-weight:bold;
 }
 .charity {
@@ -256,7 +256,7 @@ body.mainPage, body.secondPage {
 	text-align:center;
 }
 .applyForTicketsLink {
-	font-size:28px;
+	font-size:32px;
 }
 /**************
 secondpage text colouration
