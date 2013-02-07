@@ -45,7 +45,8 @@ $(document).ready(function() {
 	});
 
 	var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'), startPosition);
-	//var myWheel = new wheelObject($('#indexWheelContainer'), $('#wheel'));
+	resizeInners();
+	window.resize = resizeInners;
 });
 
 function wheelObject(indexObject, targetObject, startWheelPosition) {
@@ -155,6 +156,14 @@ function rotateTo(targetObject, deg) {
 		var theTransform = transforms[i];
 		$(targetObject).css(theTransform, 'rotate(' + deg.toString() + 'deg)');
 	}
+}
+
+function resizeInners() {
+	var pageHeight = window.innerHeight;
+	$('.sectionInner').each(function(index, elem) {
+		var theHeight = pageHeight - ($(elem).siblings('.sectionTitle').height() + 30);
+		$(elem).css('height', theHeight + 'px');
+	});
 }
 
 var imageWidths = [

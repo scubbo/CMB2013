@@ -1,3 +1,6 @@
+* {
+	color:#fff;
+}
 body {
 	margin:0;
 }
@@ -167,6 +170,9 @@ body.mainPage, body.secondPage {
 .secondPage #titleContainer > div, .charity #titleContainer > div {
 	text-align:center;
 }
+.secondPage .sectionInner {
+	overflow:scroll;
+}
 .secondPage #mainTitleContainer, .charity #mainTitleContainer {
 	margin-bottom:20px;
 }
@@ -180,8 +186,17 @@ body.mainPage, body.secondPage {
 	width:200px;
 }
 .secondPage table#ticketPriceTable, .secondPage table#contactTable {
-	font:#000;
+	color:#fff;
 	margin:0 auto;
+}
+.secondPage table#contactTable {
+	text-align:center;
+}
+.secondPage table#contactTable a {
+	font-size:18px;
+}
+.secondPage table#contactTable tr {
+	margin-bottom:4px;
 }
 .charity {
 	background-color:#000;
