@@ -16,3 +16,19 @@
 .jcarousel li {
     float: left;
 }
+.jcarousel-prev, .jcarousel-next {
+	position:absolute;
+	top:50%;
+	display:block;
+	width:100px
+	height:100px;
+	opacity:0.6;
+}
+.jcarousel-prev {
+	background-image:url(/img/larrow.png);
+	left:3px;
+}
+.jcarousel-next {
+	background-image:url(/img/rarrow.png);
+	right:3px;
+}
