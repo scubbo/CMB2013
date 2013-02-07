@@ -170,17 +170,20 @@ function resizeInners() {
 
 function setupjCarousel() {
 	console.log('setting up');	
-	$('#galleryCarouselRoot').jcarousel({
+	$('.jcarousel').jcarousel({
 		'wrap': 'both'
 	});
 
-	$('#galleryCarouselPrev').jcarouselControl({
+	$('.jCarouselPrev').jcarouselControl({
 		target: '-=1'
 	});
 
-	$('#galleryCarouselNext').jcarouselControl({
+	$('.jCarouselNext').jcarouselControl({
 		target: '+=1'
 	});
+	for (i=1;i<43;i++) {
+		$('.jcarousel').children().eq(0).append('<li id="galleryImage' + i.toString() + '"><img src="/img/galleryImages/' + i.toString() + '.JPG"></li>')
+	}
 }
 
 var imageWidths = [
