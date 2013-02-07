@@ -170,6 +170,11 @@ function resizeInners() {
 
 function setupjCarousel() {
 	console.log('setting up');	
+
+	for (i=1;i<43;i++) {
+		$('.jcarousel').children().eq(0).append('<li id="galleryImage' + i.toString() + '"><img src="/img/galleryImages/' + i.toString() + '.JPG"></li>')
+	}
+
 	$('.jcarousel').jcarousel({
 		scroll: 1,
 		visible: 1,
@@ -195,9 +200,6 @@ function setupjCarousel() {
 		$('.jcarousel').jcarousel('scroll', '+=1');
 		console.log('scroll forward');
 	});
-	for (i=1;i<43;i++) {
-		$('.jcarousel').children().eq(0).append('<li id="galleryImage' + i.toString() + '"><img src="/img/galleryImages/' + i.toString() + '.JPG"></li>')
-	}
 }
 
 var imageWidths = [
