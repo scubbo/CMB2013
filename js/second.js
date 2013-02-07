@@ -27,7 +27,7 @@ $(document).ready(function() {
 	
 	console.log('start position is ' + startPosition.toString());
 
-	$('#indexWheelContainer').css('top', pageHeight - 420).css('left', 20);
+	//$('#indexWheelContainer').css('top', pageHeight - 420).css('left', 20);
 	$('.indexWheelLink').each(function(index, elem) {
 		var theWidth = imageWidths[index];
 		index = index-startPosition;
@@ -160,8 +160,12 @@ function rotateTo(targetObject, deg) {
 
 function resizeInners() {
 	var pageHeight = window.innerHeight;
+	console.log('page height calculated as ' + pageHeight.toString());
 	$('.sectionInner').each(function(index, elem) {
+		console.log(elem);
+		console.log('title height calculated as ' + $(elem).siblings('.sectionTitle').height().toString());
 		var theHeight = pageHeight - ($(elem).siblings('.sectionTitle').height() + 30);
+		console.log('the height calculated as ' + theHeight.toString());
 		$(elem).css('height', theHeight + 'px');
 	});
 }

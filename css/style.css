@@ -122,6 +122,8 @@ body.mainPage, body.secondPage {
 	position:absolute;
 	height:400px;
 	width:400px;
+	left:10px;
+	bottom:10px;
 }
 .secondPage .indexWheelLink {
 	position:absolute;
@@ -164,8 +166,8 @@ body.mainPage, body.secondPage {
 }
 .secondPage #titleContainer, .charity #titleContainer {
 	position:absolute;
-	top:81%;
-	right:2%;
+	bottom:10px;
+	right:10px;
 }
 .secondPage #titleContainer > div, .charity #titleContainer > div {
 	text-align:center;
@@ -212,4 +214,17 @@ body.mainPage, body.secondPage {
 	width:50%;
 	font-size:20px;
 	margin:20px auto;
+}
+.charityImage {
+	display:block;
+	margin:20px auto 20px;
+	width:50%;
+}
+.charityImage#charitySCIImage {
+	width:25%;
+}
+.charityBackLink {
+	font-size:30px;
+	display:block;
+	margin:0 auto 20px;
 }
