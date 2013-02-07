@@ -173,3 +173,7 @@ body.mainPage, body.secondPage {
 .secondPage #secondaryTitle {
 	width:200px;
 }
+.secondPage table#ticketPriceTable {
+	font:#000;
+	margin:0 auto;
+}
