@@ -247,6 +247,7 @@ body.mainPage, body.secondPage {
 	text-align:center;
 	color:#ddd;
 	margin:10px auto;
+	list-style:none;
 }
 .ticketInfoPage h2 {
 	margin-top:20px;
