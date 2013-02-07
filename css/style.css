@@ -1,6 +1,9 @@
 body {
 	margin:0;
 }
+a {
+	color:inherit;
+}
 body.mainPage, body.secondPage {
 	overflow:hidden;
 }
@@ -176,4 +179,16 @@ body.mainPage, body.secondPage {
 .secondPage table#ticketPriceTable {
 	font:#000;
 	margin:0 auto;
+}
+.charity {
+	background-color:#000;
+}
+.charity h1 {
+	width:50%;
+	color:#fff;
+	margin:0 auto;
+}
+.charity p {
+	text-align:center;
+	color:#fff;
 }
