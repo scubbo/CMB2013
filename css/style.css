@@ -259,20 +259,20 @@ body.mainPage, body.secondPage {
 secondpage text colouration
 **************/
 #workersSectionInner {
-	color:#0a65b6;
+	color:#0a65b6 !important;
 }
 #ticketsSectionInner {
-	color:#9f1d89;
+	color:#9f1d89 !important;
 }
 #actsSectionInner {
-	color:#ce004d;
+	color:#ce004d !important;
 }
 #contactsSectionInner {
-	color:#c45c07;
+	color:#c45c07 !important;
 }
 #vipSectionInner {
-	color:#8c8c00;
+	color:#8c8c00 !important;
 }
 #gallerySectionInner {
-	color:#00af6e;
+	color:#00af6e !important;
 }
