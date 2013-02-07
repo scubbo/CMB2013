@@ -166,12 +166,12 @@ body.mainPage, body.secondPage {
 	width:50%;
 	margin-bottom:25px;
 }
-.secondPage #titleContainer, .charity #titleContainer {
+.secondPage #titleContainer, .charity #titleContainer, .ticketInfoPage #titleContainer {
 	position:absolute;
 	bottom:10px;
 	right:10px;
 }
-.secondPage #titleContainer > div, .charity #titleContainer > div {
+.secondPage #titleContainer > div, .charity #titleContainer > div, .ticketInfoPage #titleContainer > div {
 	text-align:center;
 }
 .secondPage .sectionInner {
@@ -183,16 +183,16 @@ body.mainPage, body.secondPage {
 .secondPage ol {
 	margin-bottom:10px;
 }
-.secondPage #mainTitleContainer, .charity #mainTitleContainer {
+.secondPage #mainTitleContainer, .charity #mainTitleContainer, .ticketInfoPage #mainTitleContainer {
 	margin-bottom:20px;
 }
 #mainTitleContainer a {
 	display:inline-block;
 }
-.secondPage #mainTitle, .charity #mainTitle {
+.secondPage #mainTitle, .charity #mainTitle, .ticketInfoPage #mainTitle {
 	width:300px;
 }
-.secondPage #secondaryTitle, .charity #secondaryTitle {
+.secondPage #secondaryTitle, .charity #secondaryTitle, .ticketInfoPage #secondaryTitle {
 	width:200px;
 }
 .secondPage table#ticketPriceTable, .secondPage table#contactTable {
