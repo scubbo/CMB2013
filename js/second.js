@@ -22,7 +22,7 @@ $(document).ready(function() {
 		console.log('queryString is ' + queryString.toString());
 		startPosition = positionLookup[queryString];
 	} else {
-		startPosition = 0;
+		startPosition = 1;
 	}
 	
 	console.log('start position is ' + startPosition.toString());

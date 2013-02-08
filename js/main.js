@@ -107,7 +107,8 @@ function activateBCFragments() {
 		});
 	});
 	$('.link').click(function() {
-		window.location.href = "/moreDetails/" + $(this).attr('src').replace('img/links/', '').replace('.png', '');
+		//window.location.href = "/moreDetails/" + $(this).attr('src').replace('img/links/', '').replace('.png', '');
+		window.location.href = "/moreDetails"
 	});	
 }
 
